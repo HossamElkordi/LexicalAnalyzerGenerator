@@ -21,11 +21,10 @@ dist/
 
 # Maven
 target/
+dist/
 
 # JetBrains IDE
 .idea/
-
-cmake-build-*
 
 # Unit test reports
 TEST*.xml
@@ -47,6 +46,4 @@ Thumbs.db
 *.avi
 *.flv
 *.mov
-<<<<<<< HEAD
 *.wmv
-=======
