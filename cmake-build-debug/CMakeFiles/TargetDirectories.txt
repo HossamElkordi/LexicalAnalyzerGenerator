@@ -1,0 +1,3 @@
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir
