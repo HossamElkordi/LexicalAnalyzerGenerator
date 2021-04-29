@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.o"
+  "CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o"
   "CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o"
   "LexicalAnalyzerGenerator"
   "LexicalAnalyzerGenerator.pdb"

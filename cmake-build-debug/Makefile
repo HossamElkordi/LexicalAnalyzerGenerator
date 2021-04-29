@@ -142,6 +142,60 @@ LexicalAnalyzerGenerator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/build
 .PHONY : LexicalAnalyzerGenerator/fast
 
+Nfa.o: Nfa.cpp.o
+
+.PHONY : Nfa.o
+
+# target to build an object file
+Nfa.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.o
+.PHONY : Nfa.cpp.o
+
+Nfa.i: Nfa.cpp.i
+
+.PHONY : Nfa.i
+
+# target to preprocess a source file
+Nfa.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.i
+.PHONY : Nfa.cpp.i
+
+Nfa.s: Nfa.cpp.s
+
+.PHONY : Nfa.s
+
+# target to generate assembly for a file
+Nfa.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.s
+.PHONY : Nfa.cpp.s
+
+State.o: State.cpp.o
+
+.PHONY : State.o
+
+# target to build an object file
+State.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o
+.PHONY : State.cpp.o
+
+State.i: State.cpp.i
+
+.PHONY : State.i
+
+# target to preprocess a source file
+State.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.i
+.PHONY : State.cpp.i
+
+State.s: State.cpp.s
+
+.PHONY : State.s
+
+# target to generate assembly for a file
+State.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.s
+.PHONY : State.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -178,6 +232,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... LexicalAnalyzerGenerator"
+	@echo "... Nfa.o"
+	@echo "... Nfa.i"
+	@echo "... Nfa.s"
+	@echo "... State.o"
+	@echo "... State.i"
+	@echo "... State.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

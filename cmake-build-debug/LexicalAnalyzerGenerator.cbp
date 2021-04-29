@@ -82,6 +82,21 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/GlobalStructures.h">
+			<Option target="LexicalAnalyzerGenerator"/>
+		</Unit>
+		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Nfa.cpp">
+			<Option target="LexicalAnalyzerGenerator"/>
+		</Unit>
+		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Nfa.h">
+			<Option target="LexicalAnalyzerGenerator"/>
+		</Unit>
+		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.cpp">
+			<Option target="LexicalAnalyzerGenerator"/>
+		</Unit>
+		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h">
+			<Option target="LexicalAnalyzerGenerator"/>
+		</Unit>
 		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/main.cpp">
 			<Option target="LexicalAnalyzerGenerator"/>
 		</Unit>
