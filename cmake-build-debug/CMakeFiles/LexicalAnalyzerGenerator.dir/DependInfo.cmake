@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Nfa.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.o"
-  "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o"
-  "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/main.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o"
+  "D:/Uni/8th/compilers/lex ana/Nfa.cpp" "D:/Uni/8th/compilers/lex ana/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.obj"
+  "D:/Uni/8th/compilers/lex ana/State.cpp" "D:/Uni/8th/compilers/lex ana/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.obj"
+  "D:/Uni/8th/compilers/lex ana/main.cpp" "D:/Uni/8th/compilers/lex ana/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

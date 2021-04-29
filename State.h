@@ -15,15 +15,18 @@ class State{
     private:
         bool isAccepting;
         string type;
-        list<transition> edges;
+
     public:
         State(bool accepting, string token_type);
+        State();
+        list<transition> edges;
         bool getIsAcc();
         void setAcc(bool acc);
         string getType();
         void setType(string token_type);
-        list<transition> getEdges();
-        void addEdge(State to, string weight);
+        void addTrans(transition a);
+        void addTrans(State to,string weight);
+
 };
 
 #endif //LEXICALANALYZERGENERATOR_STATE_H

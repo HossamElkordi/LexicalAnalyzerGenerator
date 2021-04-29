@@ -25,16 +25,22 @@ void State::setAcc(bool acc) {
     isAccepting = acc;
 }
 
-list <transition> State::getEdges() {
-    return edges;
+State::State() {
 }
 
-void State::addEdge(State to, string weight) {
-    transition edge;
-    edge.to = to;
-    edge.weight = weight;
-    edges.push_back(edge);
+void State::addTrans(transition a) {
+    edges.push_back(a);
 }
+
+void State::addTrans(State to, string weight) {
+    transition temp;
+    temp.to=to;
+    temp.weight=weight;
+}
+
+
+
+
 
 
 
