@@ -6,9 +6,10 @@
 #define LEXICALANALYZERGENERATOR_GLOBALSTRUCTURES_H
 
 #include "State.h"
+#include <set>
 
 struct transition{
-    State to;
+    set<int> to;
     string weight;
 };
 

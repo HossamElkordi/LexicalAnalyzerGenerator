@@ -6,39 +6,49 @@
 
 #IncludeRegexTransform: 
 
-D:/Uni/8th/compilers/lex ana/GlobalStructures.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.cpp
+Dfa.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.h
+
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.h
 State.h
-D:/Uni/8th/compilers/lex ana/State.h
-
-D:/Uni/8th/compilers/lex ana/Nfa.cpp
-Nfa.h
-D:/Uni/8th/compilers/lex ana/Nfa.h
-
-D:/Uni/8th/compilers/lex ana/Nfa.h
-vector
--
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h
+GlobalStructures.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/GlobalStructures.h
 map
 -
-GlobalStructures.h
-D:/Uni/8th/compilers/lex ana/GlobalStructures.h
+vector
+-
 
-D:/Uni/8th/compilers/lex ana/State.cpp
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/GlobalStructures.h
 State.h
-D:/Uni/8th/compilers/lex ana/State.h
-
-D:/Uni/8th/compilers/lex ana/State.h
-string
--
-list
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h
+set
 -
 
-D:/Uni/8th/compilers/lex ana/main.cpp
-iostream
--
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.h
 fstream
 -
 list
 -
 regex
+-
+
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h
+string
+-
+list
+-
+set
+-
+map
+-
+
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/main.cpp
+iostream
+-
+InputParser.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.h
+set
 -
 

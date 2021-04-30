@@ -6,9 +6,8 @@
 
 State::State() { }
 
-State::State(bool accepting, string token_type) {
-    isAccepting = accepting;
-    type = token_type;
+State::State(int sub) {
+    subsetState.push_back(sub);
 }
 
 bool State::getIsAcc() {
@@ -25,6 +24,20 @@ void State::setType(string token_type) {
 
 void State::setAcc(bool acc) {
     isAccepting = acc;
+}
+
+void State::addSub(int sub) {
+    subsetState.push_back(sub);
+}
+
+void State::addTrans(char input, int to) {
+    if(trans.find(input) == trans.end()){
+        set<int> s;
+        s.insert(to);
+        trans[input] = s;
+    }else{
+        (trans[input]).insert(to);
+    }
 }
 
 

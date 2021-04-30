@@ -7,23 +7,27 @@
 
 #include <string>
 #include <list>
+#include <set>
+#include <map>
 
 using namespace std;
 
 class State{
     private:
+        list<int> subsetState;
+        map<char, set<int>> trans;
         bool isAccepting;
         string type;
 
     public:
-        State(bool accepting, string token_type);
+        State(int sub);
         State();
         bool getIsAcc();
         void setAcc(bool acc);
         string getType();
         void setType(string token_type);
-        void addTrans(State to,string weight);
-
+        void addSub(int sub);
+        void addTrans(char input, int to);
 };
 
 #endif //LEXICALANALYZERGENERATOR_STATE_H

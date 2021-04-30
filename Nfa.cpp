@@ -76,27 +76,6 @@ bool isSep(char a){
     }
     return false;
 }
-string expanddashes(string in){
-    char x,y;
-    vector<char> temp;string tempo="";
-    for(int i=0;i<in.length();++i){
-        tempo="";
-        temp.clear();
-        if(in[i]=='-'&&in[i-1]!='\\'&&in[i-1]<in[i+1]){
-                x=in[i-1];
-                y=in[i+1];
-                while(x<=y)
-                    temp.push_back(x++);
-                tempo+=temp[0];
-                for(int j=1;j<temp.size();j++){
-                    tempo+='|';
-                    tempo+=temp[j];
-                }
-                in.replace(i-1,3,tempo);
-        }
-    }
-    return in;
-}
 
 bool existsInTempMap(string target){
     map<string ,Nfa>::iterator it;
@@ -110,7 +89,6 @@ bool existsInTempMap(string target){
 }
 
 void Nfa::createNfa(string reg,string name) {
-    reg= expanddashes(reg);
 //____________________stage one:preparation_______________________
 //the next for loop creates an Nfa from each char that is not a separator or an operator
 //in preparation for the next stage
