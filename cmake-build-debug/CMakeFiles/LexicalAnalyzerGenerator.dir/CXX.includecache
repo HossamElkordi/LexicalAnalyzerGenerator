@@ -6,7 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/main.cpp
+D:/Uni/8th/compilers/lex ana/GlobalStructures.h
+State.h
+D:/Uni/8th/compilers/lex ana/State.h
+
+D:/Uni/8th/compilers/lex ana/Nfa.cpp
+Nfa.h
+D:/Uni/8th/compilers/lex ana/Nfa.h
+
+D:/Uni/8th/compilers/lex ana/Nfa.h
+vector
+-
+map
+-
+GlobalStructures.h
+D:/Uni/8th/compilers/lex ana/GlobalStructures.h
+
+D:/Uni/8th/compilers/lex ana/State.cpp
+State.h
+D:/Uni/8th/compilers/lex ana/State.h
+
+D:/Uni/8th/compilers/lex ana/State.h
+string
+-
+list
+-
+
+D:/Uni/8th/compilers/lex ana/main.cpp
 iostream
 -
 fstream

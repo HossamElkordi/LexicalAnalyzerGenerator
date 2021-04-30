@@ -13,23 +13,28 @@ using namespace std;
 
 class Nfa{
 
-    private:
-        list<State> states;
-        void addEdge(State to, string weight);
-        State start;
-        State end;
     public:
         Nfa();
         Nfa(char oneLetter);
-        void setstart(State in);
-        void setend(State in );
-        State getStart();
-        State getEnd();
-        Nfa createNfa(string reg,string name);
+        int start;
+        int end;
+        vector<int>accepting;
+        map<int,string> tags;
+        map<int,map<string,vector<int>>> transitions;
+        int numberOfStates;
+        void addEdge(int to,int from, string weight);
+        void setstart(int in);
+        void offset(int offsetAmnt);
+        void setend(int in );
+        void createNfa(string reg,string name);
         void andWith(Nfa second);
         void orWith(Nfa second);
         void kleen();
         void pKleen();
+        int getStart();
+        int getEnd();
+        Nfa getThis();
+
 };
 
 #endif //LEXICALANALYZERGENERATOR_NFA_H
