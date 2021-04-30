@@ -4,6 +4,8 @@
 
 #include "State.h"
 
+State::State() { }
+
 State::State(bool accepting, string token_type) {
     isAccepting = accepting;
     type = token_type;
@@ -25,18 +27,6 @@ void State::setAcc(bool acc) {
     isAccepting = acc;
 }
 
-State::State() {
-}
-
-void State::addTrans(transition a) {
-    edges.push_back(a);
-}
-
-void State::addTrans(State to, string weight) {
-    transition temp;
-    temp.to=to;
-    temp.weight=weight;
-}
 
 
 

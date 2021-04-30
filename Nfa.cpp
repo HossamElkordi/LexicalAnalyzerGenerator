@@ -4,7 +4,6 @@
 
 #include "Nfa.h"
 
-
 Nfa::Nfa()  {
     start= State(false,NULL);
     end=start;
@@ -17,7 +16,7 @@ Nfa::Nfa(char oneLetter) {
     State temp= State(true,str);
     states.push_back(start);
     states.push_back(temp);
-    start.addTrans(temp,str);
+//    start.addTrans(temp,str);
     end=temp;
 }
 
@@ -80,7 +79,7 @@ Nfa Nfa::createNfa(string reg,string name) {
     reg= expanddashes(reg);
     for(int i=0;i<reg.size();i++){
         if(!(reg[i]='\\'&& isSep(reg[i+1]))||!isSep(reg[i])){
-            temp[reg[i]]=Nfa(reg[i]);
+//            temp[reg[i]]=Nfa(reg[i]);
         }
     }
 

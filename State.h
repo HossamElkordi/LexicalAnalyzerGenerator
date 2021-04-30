@@ -7,7 +7,6 @@
 
 #include <string>
 #include <list>
-#include "GlobalStructures.h"
 
 using namespace std;
 
@@ -19,12 +18,10 @@ class State{
     public:
         State(bool accepting, string token_type);
         State();
-        list<transition> edges;
         bool getIsAcc();
         void setAcc(bool acc);
         string getType();
         void setType(string token_type);
-        void addTrans(transition a);
         void addTrans(State to,string weight);
 
 };

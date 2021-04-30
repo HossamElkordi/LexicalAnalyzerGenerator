@@ -1,11 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.obj"
-  "CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.obj"
-  "CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.obj"
-  "LexicalAnalyzerGenerator.exe"
-  "LexicalAnalyzerGenerator.exe.manifest"
+  "CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.o"
+  "CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o"
+  "CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o"
+  "LexicalAnalyzerGenerator"
   "LexicalAnalyzerGenerator.pdb"
-  "libLexicalAnalyzerGenerator.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

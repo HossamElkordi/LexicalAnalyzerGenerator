@@ -14,7 +14,6 @@ using namespace std;
 class Nfa{
 
     private:
-
         list<State> states;
         void addEdge(State to, string weight);
         State start;

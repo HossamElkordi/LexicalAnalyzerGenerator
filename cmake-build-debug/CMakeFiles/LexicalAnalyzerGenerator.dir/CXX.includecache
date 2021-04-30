@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/main.cpp
+iostream
+-
+fstream
+-
+list
+-
+regex
+-
+
