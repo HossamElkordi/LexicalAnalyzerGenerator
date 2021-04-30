@@ -4,16 +4,15 @@
 
 #include "Nfa.h"
 //to create an nfa you have to take care of the following
-//  int start that indicates the start state almost everytime it is set to 1
-//  int end state it says the last state of the nfa
-//  int number of states it indicates the number of states in the nfa
-//  vector<int>accepting this is a vector that contains all the accepting states
-//  map<int,map<string,int>> this is the most important structure in the Nfa it
-//contains all the transition in the following manner indexing the map with the
-//the number of states returns a map that has as input a string that says what state
-//to go to if the nfa was at this state and received the string input 0 as output means
-//that the state doesn't exist or the input doesn't exist that's why the start state
-//is set to 1 instead of zero and there are no states called 0
+//      *int start that indicates the start state almost everytime it is set to 1
+//      *int end state it says the last state of the nfa
+//      *int number of states it indicates the number of states in the nfa
+//      *vector<int>accepting this is a vector that contains all the accepting states
+//      *map<int,map<string,vector<int>>> this is the most important structure in the Nfa it
+//  contains all the transition in the following manner indexing the map with the
+//  the number of state returns a map that has as input a string that says what states
+//  to go to if the nfa was at this state and received the string
+//      *map<int,string>tags that has all the tags for the accepting states
 static map<string,Nfa>temporaryMap;
 Nfa::Nfa()  {
     start= 0;
