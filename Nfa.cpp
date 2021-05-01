@@ -55,19 +55,70 @@ int Nfa::getEnd() {
 }
 
 void Nfa::andWith(Nfa second) {
-
+    second.offset(numberOfStates);
+    for (int i = 0; i < accepting.size(); ++i) {
+        addEdge(second.start,accepting[i],"$");
+    }
+    numberOfStates+=second.numberOfStates;
+    accepting=second.accepting;
+    tags=second.tags;
+    end=second.end;
+    for(map<int,map<string,vector<int>>>::iterator it = second.transitions.begin(); it != second.transitions.end(); ++it) {
+        transitions[it->first]=it->second;
+    }
 }
 
 void Nfa::orWith(Nfa second) {
+    offset(1);
+    numberOfStates++;
+    second.offset(1+numberOfStates);
+    addEdge(start,1,"$");
+    addEdge(second.start,1,"$");
+    numberOfStates+=second.numberOfStates;
+    numberOfStates++;
+    for(map<int,map<string,vector<int>>>::iterator it = second.transitions.begin(); it != second.transitions.end(); ++it) {
+        transitions[it->first]=it->second;
+    }
+    for(int i=0;i<second.accepting.size();++i){
+        accepting.push_back(second.accepting[i]);
+
+    }
+    for(map<int,string>::iterator it = second.tags.begin(); it != second.tags.end(); ++it) {
+        tags[it->first]=it->second;
+    }
+    for (int i = 0; 0 < accepting.size();++i){
+        addEdge(numberOfStates,accepting[i],"$");
+
+    }
+    end=numberOfStates;
 
 }
 
 void Nfa::kleen() {
-
+    offset(1);
+    numberOfStates+=2;
+    addEdge(1,start,"$");
+    start=1;
+    addEdge(numberOfStates,1,"$");
+    for (int i = 0; 0 < accepting.size();++i){
+        addEdge(numberOfStates,accepting[i],"$");
+    }
+    accepting.push_back(numberOfStates);
+    end=numberOfStates;
+    addEdge(start,end,"$");
 }
 
 void Nfa::pKleen() {
-
+    offset(1);
+    numberOfStates+=2;
+    addEdge(1,start,"$");
+    start=1;
+    for (int i = 0; 0 < accepting.size();++i){
+        addEdge(numberOfStates,accepting[i],"$");
+    }
+    accepting.push_back(numberOfStates);
+    end=numberOfStates;
+    addEdge(start,end,"$");
 }
 
 bool isSep(char a){
@@ -89,7 +140,7 @@ bool existsInTempMap(string target){
 }
 
 void Nfa::createNfa(string reg,string name) {
-//____________________stage one:preparation_______________________
+//____________________stage one:preparation______________________________________
 //the next for loop creates an Nfa from each char that is not a separator or an operator
 //in preparation for the next stage
     for(int i=0;i<reg.size();i++){
@@ -100,8 +151,134 @@ void Nfa::createNfa(string reg,string name) {
                 temporaryMap[str]=Nfa(reg[i]);
         }
     }
-//_________________end of stage one________________
-//_________________stage two:looking for parenthesis___________
+//_________________end of stage one______________________________________________
+//_________________stage two parenthesising for the kleen closure and or_________
+    for(int i=1;i<reg.size();i++){
+        if((reg[i]=='*'||reg[i]=='+')&&reg[i-1]!='\\'){
+            if(i==1){
+                reg.insert(i+1,")");
+                reg.insert(i,")");
+                i++;
+                reg.insert(i-2,"((");
+                i+=2;
+            }
+            else if (reg[i-1]==')'&&reg[i-2]!='\\'){
+                int j=i-2;
+                int count=0;
+                while(j>=0){
+                    if(reg[j]!='('){
+                        if(reg[j]==')'){++count;}
+                        --j;
+                    }
+                    else if(j!=0){
+                        if(count==0){
+                            reg.insert(j,"(");
+                            i++;
+                            break;
+                        }
+                        else{
+                            --count;
+                            --j;
+                        }
+
+                    }
+                    else{
+                        reg.insert(j,"(");
+                        ++i;
+                        break;
+                    }
+                }
+                reg.insert(i+1,")");
+
+            }
+            else{
+                reg.insert(i+1,")");
+                reg.insert(i,")");
+                i++;
+                reg.insert(i-2,"((");
+                i+=2;
+            }
+        }
+    }
+    for(int i=1;i<reg.size();i++){
+        if(reg[i]=='|'&&reg[i-1]!='\\'){
+            if(i>1){
+                if(reg[i-1]==')'){
+                    int j=i-1;
+                    while(j>=0){
+                        int count=-1;
+                        if(reg[j]!='('){
+                            if(reg[j]==')'){++count;}
+                            --j;
+                        }
+                        else if(j!=0){
+                            if(reg[j-1]=='\\'){
+                                --j;
+                            }
+                            else{
+                                if(count==0){
+                                    reg.insert(j,"(");
+                                    i++;
+                                    break;
+                                }
+                                else{
+                                    --count;
+                                    --j;
+                                }
+                            }
+                        }
+                        else{
+                            reg.insert(j,"(");
+                            ++i;
+                            break;
+                        }
+                    }
+                }
+                else{
+                    reg.insert(i,")");
+                    ++i;
+                    reg.insert(i-2,"((");
+                    i+=2;
+                }
+
+            }
+            else{
+                reg.insert(i,")");
+                ++i;
+                reg.insert(0,"((");
+                i+=2;
+            }
+            if(i<reg.size()-1){
+                if(reg[i+1]=='('){
+                    int j=i+2;
+                    int count=0;
+                    while(j<reg.size()){
+                        if(reg[j]==')'&&reg[j-1]!='\\'){
+                            if(count==0) {
+                                reg.insert(j + 1, ")");
+                                break;
+                            }
+                            else{
+                                --count;++j;
+                            }
+                        }
+                        else if(reg[j]=='('&&reg[j-1]!='\\'){
+                            ++count;
+                            ++j;
+                        }
+                        else{++j;}
+                    }
+                }
+                else{
+                    reg.insert(i+2,"))");
+                    reg.insert(i+1,"(");
+                }
+            }
+        }
+    }
+
+
+//_________________stage three:looking for parenthesis_________
     for(int i=0;i<reg.size();i++){
         if((i>0&&reg[i]=='('&&reg[i-1]!='\\')||(i==0&&reg[i]=='(')){
             int end=0;
@@ -114,6 +291,7 @@ void Nfa::createNfa(string reg,string name) {
         }
 
     }
+//_________________end of stage three___________________________
 
 }
 
