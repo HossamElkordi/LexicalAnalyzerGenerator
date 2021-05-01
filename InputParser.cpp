@@ -19,29 +19,15 @@ void InputParser::readFile() {
         if(regex_match(line, def)){
             // definition
             parseDefsAndRegs(line, &definitions, false);
-//            line = regex_replace(line, regex("[\\s]"),"");
-//            list<string> def;
-//            split(line, "=", &def);
-//            definitions[*(def.begin())] = *(++def.begin());
         }else if(regex_match(line, reg)){
             //regex
             parseDefsAndRegs(line, &regexes, true);
-//            line = regex_replace(line, regex("[\\s]"),"");
-//            list<string> reg;
-//            split(line, ":", &reg);
-//            regexes[*(reg.begin())] = *(++reg.begin());
         }else if(regex_match(line, k)){
             //keywords
             parseKeysAndPuncs(line, &keywords);
-//            line.erase(line.begin());
-//            line.erase(line.end() - 1);
-//            split(line, "[\\s]*", &keywords);
         }else if(regex_match(line, p)){
             //puctuation
             parseKeysAndPuncs(line, &punctuations);
-//            line.erase(line.begin());
-//            line.erase(line.end() - 1);
-//            split(line, "[\\s]*", &punctuations);
         }else{
             cout << line + ": Undefined Rule" << endl;
         }
@@ -63,7 +49,7 @@ void InputParser::parseDefsAndRegs(string line, map<string, string> *storage, bo
     string reg = *(--id.end());
     replaceRanges(&reg);
     replacePreDefined(&reg);
-    reg = regex_replace(reg, regex("\\\\"), "");
+    reg = regex_replace(reg, regex("\\\\L"), "$");
     if(isReg){
         storage->insert({type, reg});
     }else{

@@ -6,25 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.cpp
-Dfa.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.h
-
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.h
-State.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h
-GlobalStructures.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/GlobalStructures.h
-map
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.cpp
+iostream
 -
-vector
--
-
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/GlobalStructures.h
-State.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h
-set
--
+InputParser.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.h
 
 /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.h
 fstream
@@ -32,23 +18,5 @@ fstream
 list
 -
 regex
--
-
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h
-string
--
-list
--
-set
--
-map
--
-
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/main.cpp
-iostream
--
-InputParser.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.h
-set
 -
 
