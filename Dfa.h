@@ -31,6 +31,7 @@ class Dfa{
         void createDFA();
         map<set<int>, map<string, set<int>>> getGraph();
         map<set<int>, string> getDfaAccepted();
+        set<int> getStart();
 };
 
 #endif //LEXICALANALYZERGENERATOR_DFA_H

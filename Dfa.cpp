@@ -87,3 +87,7 @@ map<set<int>, map<string, set<int>>> Dfa::getGraph() {
 map<set<int>, string> Dfa::getDfaAccepted() {
     return dfaAccepted;
 }
+
+set<int> Dfa::getStart() {
+    return start;
+}
