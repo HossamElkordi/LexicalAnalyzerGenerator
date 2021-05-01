@@ -41,12 +41,17 @@ void Dfa::createDFA() {
     set<int> start;
     start.insert(1);
     dStates.push_back(start);
+    bool isStart = true;
 
     while(!dStates.empty()){
         set<int> t = dStates.at(0), u;
         dStates.erase(dStates.begin());
         checker.push_back(t);
         epsClosure(&t);
+        if(isStart){
+            start = t;
+            isStart = false;
+        }
         for(string c : alphabet){
             move(&t, c, &u);
             epsClosure(&u);
