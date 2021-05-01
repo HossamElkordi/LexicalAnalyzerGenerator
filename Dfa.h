@@ -13,21 +13,24 @@ using namespace std;
 
 class Dfa{
     private:
-        list<char> alphabet;
+        list<string> alphabet;
         map<int, string> acceptingStates;
-        map<set<int>, string> dfaAccepted;
         map<int, map<string, vector<int>>> nfa;
-        map<set<int>, map<char, set<int>>> graph;
+        map<string, int> regexPriority;
+        map<set<int>, string> dfaAccepted;
+        map<set<int>, map<string, set<int>>> graph;
         set<int> start;
 
         bool contains(vector<set<int>> *pVector, set<int> set);
 
     public:
         Dfa();
-        Dfa(map<int, map<string, vector<int>>> nfaGraph, list<char> inputs, map<int, string> acceStates);
+        Dfa(map<int, map<string, vector<int>>> nfaGraph, list<string> inputs, map<int, string> acceStates, map<string, int> regPri);
         void epsClosure(set<int> *from);
-        void move(set<int> *from, char input, set<int> *to);
+        void move(set<int> *from, string input, set<int> *to);
         void createDFA();
+        map<set<int>, map<string, set<int>>> getGraph();
+        map<set<int>, string> getDfaAccepted();
 };
 
 #endif //LEXICALANALYZERGENERATOR_DFA_H

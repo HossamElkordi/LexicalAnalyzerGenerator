@@ -14,14 +14,15 @@ void InputParser::readFile() {
     regex reg(R"([a-zA-z]*[\s]*:[\s|a-zA-z0-9|\-|\+|\*|\(|\)|\||\=|\<|>|\!\.|\/]*)");
     regex k(R"(\{[\s]*([a-z]*[\s]*)*\})");
     regex p(R"(\[[\s]*([\W]*[\s]*)*\])");
+    int pri = 0;
 
     while(getline(file, line)){
         if(regex_match(line, def)){
             // definition
-            parseDefsAndRegs(line, &definitions, false);
+            parseDefsAndRegs(line, &definitions, false, pri);
         }else if(regex_match(line, reg)){
             //regex
-            parseDefsAndRegs(line, &regexes, true);
+            parseDefsAndRegs(line, &regexes, true, pri);
         }else if(regex_match(line, k)){
             //keywords
             parseKeysAndPuncs(line, &keywords);
@@ -31,6 +32,7 @@ void InputParser::readFile() {
         }else{
             cout << line + ": Undefined Rule" << endl;
         }
+        ++pri;
     }
 }
 
@@ -41,7 +43,7 @@ void InputParser::parseKeysAndPuncs(string line, list<string> *storage) {
     split(line, "[\\s]+", storage);
 }
 
-void InputParser::parseDefsAndRegs(string line, map<string, string> *storage, bool isReg) {
+void InputParser::parseDefsAndRegs(string line, map<string, string> *storage, bool isReg, int priority) {
     line = regex_replace(line, regex("[\\s]+"), "");
     list<string> id;
     split(line, (isReg) ? ":" : "=", &id);
@@ -52,6 +54,7 @@ void InputParser::parseDefsAndRegs(string line, map<string, string> *storage, bo
     reg = regex_replace(reg, regex("\\\\L"), "$");
     if(isReg){
         storage->insert({type, reg});
+        regexPriority[type] = priority;
     }else{
         storage->insert({type, "(" + reg + ")"});
     }
@@ -125,4 +128,8 @@ map<string, string> InputParser::getRegexes() {
 
 map<string, string> InputParser::getDefinitions() {
     return definitions;
+}
+
+map<string, int> InputParser::getRegexPriority() {
+    return regexPriority;
 }

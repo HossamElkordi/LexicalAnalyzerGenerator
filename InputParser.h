@@ -16,12 +16,13 @@ class InputParser{
         list<string> keywords;
         list<string> punctuations;
         map<string, string> regexes;
+        map<string, int> regexPriority;
         map<string, string> definitions;
         const string filePath = "grammar.txt";
 
         void split(string str, string seperator, list<string> * strings);
         void parseKeysAndPuncs(string line, list<string> *storage);
-        void parseDefsAndRegs(string line, map<string, string> *storage, bool isReg);
+        void parseDefsAndRegs(string line, map<string, string> *storage, bool isReg, int priority);
         void replaceRanges(string* reg);
         void replacePreDefined(string* reg);
         string expandDashes(string in);
@@ -32,6 +33,7 @@ class InputParser{
         list<string> getPunctuations();
         map<string, string> getRegexes();
         map<string, string> getDefinitions();
+        map<string, int> getRegexPriority();
 };
 
 #endif //LEXICALANALYZERGENERATOR_INPUTPARSER_H
