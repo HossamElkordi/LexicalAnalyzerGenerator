@@ -76,7 +76,8 @@ int main() {
 //    }
     //nfa's testing unit
     Nfa temp=Nfa();
-    temp.createNfa("a+","a", true);
+    temp.createNfa("a|b","a", true);
+    //printing transitions
     for(map<int,map<string,vector<int>>>::iterator it = temp.transitions.begin(); it != temp.transitions.end(); ++it) {
         cout<<it->first<<"--> ";
         for(map<string,vector<int>>::iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
@@ -88,13 +89,15 @@ int main() {
         }
         cout<<endl;
     }
+    //printing accepted states
     for (int i = 0; i < temp.accepting.size(); ++i) {
         cout<<"accepted state"<<i<<" "<<temp.accepting[i]<<endl;
     }
+    //printing tags
     for(map<int,string>::iterator it2 = temp.tags.begin(); it2 != temp.tags.end(); ++it2) {
         cout<<it2->first<<" : "<<it2->second<<endl;
     }
 
-//end
+    //end
     return 0;
 }
