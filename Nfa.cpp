@@ -14,11 +14,7 @@
 //  to go to if the nfa was at this state and received the string
 //      *map<int,string>tags that has all the tags for the accepting states
 static map<string,Nfa>temporaryMap;
-Nfa::Nfa()  {
-    start= 0;
-    end=0;
-    numberOfStates=0;
-}
+Nfa::Nfa()  =  default;
 Nfa::Nfa(char oneLetter) {
     start= 1;
     end=2;
@@ -30,6 +26,7 @@ Nfa::Nfa(char oneLetter) {
     tempo.push_back(2);
     temp[str]=tempo;
     transitions[1]=temp;
+    numberOfStates=2;
     tags[2]=str;
 }
 Nfa Nfa::getThis() {
@@ -55,6 +52,16 @@ int Nfa::getEnd() {
 }
 
 void Nfa::andWith(Nfa second) {
+    if(numberOfStates==1){
+        transitions=second.transitions;
+        tags=second.tags;
+        start=second.start;
+        end=second.end;
+        accepting=second.accepting;
+        numberOfStates=second.numberOfStates;
+        return;
+    }
+    string tg=tags[end];
     second.offset(numberOfStates);
     for (int i = 0; i < accepting.size(); ++i) {
         addEdge(second.start,accepting[i],"$");
@@ -66,12 +73,15 @@ void Nfa::andWith(Nfa second) {
     for(map<int,map<string,vector<int>>>::iterator it = second.transitions.begin(); it != second.transitions.end(); ++it) {
         transitions[it->first]=it->second;
     }
+    for(map<int,string>::iterator it2 = tags.begin(); it2 != tags.end(); ++it2) {
+        tags[it2->first]=tg+it2->second;
+    }
 }
 
 void Nfa::orWith(Nfa second) {
     offset(1);
     numberOfStates++;
-    second.offset(1+numberOfStates);
+    second.offset(numberOfStates);
     addEdge(start,1,"$");
     addEdge(second.start,1,"$");
     numberOfStates+=second.numberOfStates;
@@ -86,43 +96,65 @@ void Nfa::orWith(Nfa second) {
     for(map<int,string>::iterator it = second.tags.begin(); it != second.tags.end(); ++it) {
         tags[it->first]=it->second;
     }
-    for (int i = 0; 0 < accepting.size();++i){
+    for (int i = 0; i < accepting.size();++i){
         addEdge(numberOfStates,accepting[i],"$");
 
     }
+    accepting.push_back(numberOfStates);
     end=numberOfStates;
+    start=1;
+    string tg;
+    bool flag=false;
+    for(map<int,string>::iterator it2 = tags.begin(); it2 != tags.end(); ++it2) {
+        if(flag)
+            tg+="|";
+        else
+            flag= true;
+        tg+=it2->second;
 
+    }
+    tags[end]=tg;
 }
 
 void Nfa::kleen() {
+    string tg=tags[end];
+    tg+="*";
     offset(1);
     numberOfStates+=2;
-    addEdge(1,start,"$");
+    addEdge(start,1,"$");
     start=1;
     addEdge(numberOfStates,1,"$");
-    for (int i = 0; 0 < accepting.size();++i){
+    for (int i = 0; i < accepting.size();++i){
         addEdge(numberOfStates,accepting[i],"$");
     }
     accepting.push_back(numberOfStates);
     end=numberOfStates;
     addEdge(start,end,"$");
+    for (int i = 0; i <accepting.size(); ++i) {
+        tags[accepting[i]]=tg;
+    }
 }
 
 void Nfa::pKleen() {
+    string tg=tags[end];
+    tg+="+";
     offset(1);
     numberOfStates+=2;
-    addEdge(1,start,"$");
+    addEdge(start,1,"$");
     start=1;
-    for (int i = 0; 0 < accepting.size();++i){
+    for (int i = 0; i < accepting.size();++i){
         addEdge(numberOfStates,accepting[i],"$");
     }
     accepting.push_back(numberOfStates);
     end=numberOfStates;
     addEdge(start,end,"$");
+    for (int i = 0; i <accepting.size(); ++i) {
+        tags[accepting[i]]=tg;
+    }
 }
 
 bool isSep(char a){
-    if(a=='-'||a=='|'||a=='+'||a=='*'||a=='('||a==')'||'\\'){
+    if(a=='-'||a=='|'||a=='+'||a=='*'||a=='('||a==')'||a=='\\'){
         return true;
     }
     return false;
@@ -273,7 +305,7 @@ int getNext(string reg, int start){
         }
         return start;
     }
-    int count=0;
+    int count=-1;
     while(start<reg.size()){
         if(reg[start]=='(')
             ++count;
@@ -289,7 +321,7 @@ int getNext(string reg, int start){
 }
 
 void Nfa::execute(char op,string operand){
-    if(op=='*')
+    if(op=='+')
         pKleen();
     else if(op=='*')
         kleen();
@@ -310,7 +342,8 @@ void Nfa::createNfa(string reg,string name,bool doParenthesis) {
     for(int i=0;i<reg.size();i++){
         string str;
         str+=reg[i];
-        if((!isSep(reg[i]))||(i>0&&(isSep(reg[i])&&reg[i-1]=='\\'))){
+        bool con=(!isSep(reg[i]))||(i>0&&(isSep(reg[i])&&reg[i-1]=='\\'));
+        if(con){
             if(!existsInTempMap(str))
                 temporaryMap[str]=Nfa(reg[i]);
         }
@@ -321,12 +354,12 @@ void Nfa::createNfa(string reg,string name,bool doParenthesis) {
 //_________________stage three:looking for parenthesis_________
     for(int i=0;i<reg.size();i++){
         if((i>0&&reg[i]=='('&&reg[i-1]!='\\')||(i==0&&reg[i]=='(')){
-            int end=0;
-            while(reg[end+1+i]!=')'||reg[end+i]=='\\'){
+            int end= getNext(reg,i);
+            /*while(reg[end+1+i]!=')'||reg[end+i]=='\\'){
                 ++end;
-            }
+            }*/
             Nfa newnfa=Nfa();
-            newnfa.createNfa(reg.substr(i+1,end),NULL, false);
+            newnfa.createNfa(reg.substr(i+1,end-i-1)," ", false);
             temporaryMap[reg.substr(i,end+1)]=newnfa.getThis();
         }
 
@@ -336,7 +369,7 @@ void Nfa::createNfa(string reg,string name,bool doParenthesis) {
     start=1;
     end=1;
     numberOfStates=1;
-    char op='+';
+    char op='x';
     for (int i = 0; i < reg.size(); ++i) {
         char currentop=op;
         string operand="";
@@ -356,9 +389,9 @@ void Nfa::createNfa(string reg,string name,bool doParenthesis) {
         }
         else{
             if(reg[i]=='*')
-                execute('*',NULL);
+                execute('*'," ");
             else if(reg[i]=='+')
-                execute('+',NULL);
+                execute('+'," ");
             else
                 op=reg[i];
         }
@@ -403,6 +436,9 @@ void Nfa::offset(int offsetAmnt) {
     for(map<int,string>::iterator it = tags.begin(); it != tags.end(); ++it) {
         tempo[it->first+offsetAmnt]=it->second;
     }
+    tags=tempo;
+    start+=offsetAmnt;
+    end+=offsetAmnt;
 
 }
 bool transitionMapContains(map<int,map<string,vector<int>>> in,int target){
@@ -428,33 +464,25 @@ bool transitionMapContains(map<string,vector<int>> in,string target){
 }
 
 void Nfa::addEdge(int to, int from, string weight) {
-    if(to>=start&&from>=start&&to<=end&&from<=end){
-        if(transitionMapContains(transitions,from)){
-            if(transitionMapContains(transitions[from],weight)){
-                transitions[from][weight].push_back(to);
-            }
-            else{
-                vector<int> tempo;
-                tempo.push_back(to);
-                transitions[from][weight]=tempo;
-            }
+
+    if(transitionMapContains(transitions,from)){
+        if(transitionMapContains(transitions[from],weight)){
+            transitions[from][weight].push_back(to);
         }
         else{
-            map<string,vector<int>> tmp;
-            vector<int>ttt;
-            ttt.push_back(to);
-            tmp[weight]=ttt;
-            transitions[from]=tmp;
+            vector<int> tempo;
+            tempo.push_back(to);
+            transitions[from][weight]=tempo;
         }
     }
+    else{
+        map<string,vector<int>> tmp;
+        vector<int>ttt;
+        ttt.push_back(to);
+        tmp[weight]=ttt;
+        transitions[from]=tmp;
+    }
+
 }
-
-
-
-
-
-
-
-
 
 

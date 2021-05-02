@@ -74,7 +74,27 @@ int main() {
 //    for(auto i = puncs.begin(); i != puncs.end(); ++i){
 //        cout << *i + " ";
 //    }
+    //nfa's testing unit
     Nfa temp=Nfa();
-    temp.createNfa("a|b","a", true);
+    temp.createNfa("a+","a", true);
+    for(map<int,map<string,vector<int>>>::iterator it = temp.transitions.begin(); it != temp.transitions.end(); ++it) {
+        cout<<it->first<<"--> ";
+        for(map<string,vector<int>>::iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
+            cout<<"   "<<it2->first;
+            for (int j = 0; j < it2->second.size(); ++j) {
+                cout<<"-"<<it2->second[j]<<"  ";
+            }
+            cout<<endl;
+        }
+        cout<<endl;
+    }
+    for (int i = 0; i < temp.accepting.size(); ++i) {
+        cout<<"accepted state"<<i<<" "<<temp.accepting[i]<<endl;
+    }
+    for(map<int,string>::iterator it2 = temp.tags.begin(); it2 != temp.tags.end(); ++it2) {
+        cout<<it2->first<<" : "<<it2->second<<endl;
+    }
+
+//end
     return 0;
 }
