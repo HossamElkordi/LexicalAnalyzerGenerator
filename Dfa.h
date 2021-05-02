@@ -13,7 +13,7 @@ using namespace std;
 
 class Dfa{
     private:
-        list<string> alphabet;
+        set<string> alphabet;
         map<int, string> acceptingStates;
         map<int, map<string, vector<int>>> nfa;
         map<string, int> regexPriority;
@@ -25,7 +25,7 @@ class Dfa{
 
     public:
         Dfa();
-        Dfa(map<int, map<string, vector<int>>> nfaGraph, list<string> inputs, map<int, string> acceStates, map<string, int> regPri);
+        Dfa(map<int, map<string, vector<int>>> nfaGraph, set<string> inputs, map<int, string> acceStates, map<string, int> regPri);
         void epsClosure(set<int> *from);
         void move(set<int> *from, string input, set<int> *to);
         void createDFA();

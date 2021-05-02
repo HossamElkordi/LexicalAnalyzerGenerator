@@ -79,7 +79,7 @@ int main() {
     //the is a function called orWith that x1.orWith(x2) groups x1 and 2 together
         //nfa's testing unit
     Nfa temp=Nfa();
-    temp.createNfa(",","a", true);
+    temp.createNfa("(10|101|110)*","a", true);
     //printing transitions
     for(map<int,map<string,vector<int>>>::iterator it = temp.transitions.begin(); it != temp.transitions.end(); ++it) {
         cout<<it->first<<"--> ";
@@ -102,5 +102,15 @@ int main() {
     }
 
     //end
+
+//    Main Program
+//    InputParser ip;
+//    ip.readFile();
+//    Nfa nfa;
+//    map<string, string> regs = ip.getRegexes();
+//    Nfa grouped = nfa.createGroupedNfa(&regs);
+//    Dfa dfa(grouped.transitions, grouped.getAlphabets(), grouped.tags, ip.getRegexPriority());
+//    dfa.createDFA();
+//    End Of Main Program
     return 0;
 }

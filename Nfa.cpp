@@ -485,3 +485,32 @@ void Nfa::addEdge(int to, int from, string weight) {
 
 }
 
+Nfa Nfa::createGroupedNfa(map<string, string>* regexes) {
+    list<Nfa> nfas;
+    for(auto & regexe : *regexes){
+        Nfa nfa = Nfa();
+        nfa.createNfa(regexe.first, regexe.second, true);
+        nfas.push_back(nfa);
+    }
+    return groupNfas(&nfas);
+}
+
+Nfa Nfa::groupNfas(list<Nfa>* nfas) {
+    Nfa n = nfas->front();
+    nfas->erase(nfas->begin());
+    while(!nfas->empty()){
+        n.orWith(nfas->front());
+        nfas->erase(nfas->begin());
+    }
+    return n;
+}
+
+set<string> Nfa::getAlphabets() {
+    set<string> alpha;
+    for(auto i : transitions){
+        for(auto j : i.second){
+            alpha.insert(j.first);
+        }
+    }
+    return alpha;
+}

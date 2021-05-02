@@ -6,7 +6,7 @@
 
 Dfa::Dfa() = default;
 
-Dfa::Dfa(map<int, map<string, vector<int>>> nfaGraph, list<string> inputs, map<int, string> acceStates, map<string, int> regPri) {
+Dfa::Dfa(map<int, map<string, vector<int>>> nfaGraph, set<string> inputs, map<int, string> acceStates, map<string, int> regPri) {
     nfa = nfaGraph;
     alphabet = inputs;
     acceptingStates = acceStates;

@@ -36,7 +36,9 @@ class Nfa{
         int getEnd();
         string parenthesis(string reg);
         Nfa getThis();
-
+        Nfa groupNfas(list<Nfa>* nfas);
+        Nfa createGroupedNfa(map<string, string>* regexes);
+        set<string> getAlphabets();
 };
 
 #endif //LEXICALANALYZERGENERATOR_NFA_H
