@@ -1,6 +1,7 @@
 #include <iostream>
 #include "InputParser.h"
 #include "Dfa.h"
+#include "Nfa.h"
 #include <set>
 
 using namespace std;
@@ -73,5 +74,7 @@ int main() {
 //    for(auto i = puncs.begin(); i != puncs.end(); ++i){
 //        cout << *i + " ";
 //    }
+    Nfa temp=Nfa();
+    temp.createNfa("a|b","a", true);
     return 0;
 }

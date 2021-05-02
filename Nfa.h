@@ -26,13 +26,15 @@ class Nfa{
         void setstart(int in);
         void offset(int offsetAmnt);
         void setend(int in );
-        void createNfa(string reg,string name);
+        void createNfa(string reg,string name,bool parenthesis);
         void andWith(Nfa second);
         void orWith(Nfa second);
         void kleen();
         void pKleen();
+        void execute(char op,string operand);
         int getStart();
         int getEnd();
+        string parenthesis(string reg);
         Nfa getThis();
 
 };

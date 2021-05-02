@@ -138,21 +138,8 @@ bool existsInTempMap(string target){
         return false;
     return true;
 }
-
-void Nfa::createNfa(string reg,string name) {
-//____________________stage one:preparation______________________________________
-//the next for loop creates an Nfa from each char that is not a separator or an operator
-//in preparation for the next stage
-    for(int i=0;i<reg.size();i++){
-        string str;
-        str+=reg[i];
-        if((!isSep(reg[i]))||(i>0&&(isSep(reg[i])&&reg[i-1]=='\\'))){
-            if(!existsInTempMap(str))
-                temporaryMap[str]=Nfa(reg[i]);
-        }
-    }
-//_________________end of stage one______________________________________________
-//_________________stage two parenthesising for the kleen closure and or_________
+string Nfa::parenthesis(string reg) {
+    //_________________stage two parenthesising for the kleen closure and or_________
     for(int i=1;i<reg.size();i++){
         if((reg[i]=='*'||reg[i]=='+')&&reg[i-1]!='\\'){
             if(i==1){
@@ -276,7 +263,60 @@ void Nfa::createNfa(string reg,string name) {
             }
         }
     }
+    return reg;
+}
 
+int getNext(string reg, int start){
+    if(reg[start]!='('){
+        if(reg[start]=='\\'){
+            return start+1;
+        }
+        return start;
+    }
+    int count=0;
+    while(start<reg.size()){
+        if(reg[start]=='(')
+            ++count;
+        if(reg[start]==')'&&reg[start-1]!='\\'){
+            if(count==0)
+                return start;
+            --count;
+
+        }
+        ++start;
+    }
+    return -1;
+}
+
+void Nfa::execute(char op,string operand){
+    if(op=='*')
+        pKleen();
+    else if(op=='*')
+        kleen();
+    else if(op=='|')
+        orWith(temporaryMap[operand]);
+    else
+        andWith(temporaryMap[operand]);
+}
+bool isoperation(char a ){
+    return (a=='*'||a=='+'||a=='|'||a=='*');
+}
+
+
+void Nfa::createNfa(string reg,string name,bool doParenthesis) {
+//____________________stage one:preparation______________________________________
+//the next for loop creates an Nfa from each char that is not a separator or an operator
+//in preparation for the next stage
+    for(int i=0;i<reg.size();i++){
+        string str;
+        str+=reg[i];
+        if((!isSep(reg[i]))||(i>0&&(isSep(reg[i])&&reg[i-1]=='\\'))){
+            if(!existsInTempMap(str))
+                temporaryMap[str]=Nfa(reg[i]);
+        }
+    }
+//_________________end of stage one______________________________________________
+    if (doParenthesis){reg= parenthesis(reg);}
 
 //_________________stage three:looking for parenthesis_________
     for(int i=0;i<reg.size();i++){
@@ -286,12 +326,43 @@ void Nfa::createNfa(string reg,string name) {
                 ++end;
             }
             Nfa newnfa=Nfa();
-            newnfa.createNfa(reg.substr(i+1,end),NULL);
+            newnfa.createNfa(reg.substr(i+1,end),NULL, false);
             temporaryMap[reg.substr(i,end+1)]=newnfa.getThis();
         }
 
     }
 //_________________end of stage three___________________________
+//tagmee3
+    start=1;
+    end=1;
+    numberOfStates=1;
+    char op='+';
+    for (int i = 0; i < reg.size(); ++i) {
+        char currentop=op;
+        string operand="";
+        if(reg[i]=='\\')
+            continue;
+        if(!isoperation(reg[i])){
+            int end=getNext(reg,i);
+            operand=reg.substr(i,end-i+1);
+            op='x';
+            i=end;
+            execute(currentop,operand);
+        }
+        else if(reg[i-1]=='\\'){
+            operand=reg.substr(i,1);
+            op='x';
+            execute(currentop,operand);
+        }
+        else{
+            if(reg[i]=='*')
+                execute('*',NULL);
+            else if(reg[i]=='+')
+                execute('+',NULL);
+            else
+                op=reg[i];
+        }
+    }
 
 }
 
@@ -377,6 +448,8 @@ void Nfa::addEdge(int to, int from, string weight) {
         }
     }
 }
+
+
 
 
 
