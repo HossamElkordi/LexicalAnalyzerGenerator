@@ -485,4 +485,3 @@ void Nfa::addEdge(int to, int from, string weight) {
 
 }
 
-
