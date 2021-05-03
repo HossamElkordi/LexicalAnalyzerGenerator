@@ -2,6 +2,7 @@
 // Created by hossam and a7ma yasser on 29/04/2021.
 //
 
+#include <iostream>
 #include "Nfa.h"
 //to create an nfa you have to take care of the following
 //      *int start that indicates the start state almost everytime it is set to 1
@@ -358,9 +359,11 @@ void Nfa::createNfa(string reg,string name,bool doParenthesis) {
             /*while(reg[end+1+i]!=')'||reg[end+i]=='\\'){
                 ++end;
             }*/
-            Nfa newnfa=Nfa();
-            newnfa.createNfa(reg.substr(i+1,end-i-1)," ", false);
-            temporaryMap[reg.substr(i,end+1)]=newnfa.getThis();
+            if(!existsInTempMap(reg.substr(i+1,end-i-1))) {
+                Nfa newnfa = Nfa();
+                newnfa.createNfa(reg.substr(i + 1, end - i - 1), " ", false);
+                temporaryMap[reg.substr(i, end + 1)] = newnfa.getThis();
+            }
         }
 
     }
@@ -396,7 +399,7 @@ void Nfa::createNfa(string reg,string name,bool doParenthesis) {
                 op=reg[i];
         }
     }
-
+    cout<<"creating "+reg<<endl;
 }
 
 void Nfa::setend(int in) {
@@ -486,21 +489,59 @@ void Nfa::addEdge(int to, int from, string weight) {
 }
 
 Nfa Nfa::createGroupedNfa(map<string, string>* regexes) {
-    list<Nfa> nfas;
+    vector<Nfa> nfas;
     for(auto & regexe : *regexes){
         Nfa nfa = Nfa();
         nfa.createNfa(regexe.first, regexe.second, true);
         nfas.push_back(nfa);
     }
-    return groupNfas(&nfas);
+    return orAll(nfas);
 }
 
-Nfa Nfa::groupNfas(list<Nfa>* nfas) {
-    Nfa n = nfas->front();
-    nfas->erase(nfas->begin());
-    while(!nfas->empty()){
-        n.orWith(nfas->front());
-        nfas->erase(nfas->begin());
+
+Nfa Nfa::orAll(vector<Nfa> in){
+    int nstates=1;
+    in[0].offset(1);
+    nstates+=in[0].numberOfStates;
+    in[0].addEdge(in[0].start,1,"$");
+    for (int i = 1; i < in.size(); ++i) {
+        in[i].offset(nstates);
+        nstates+=in[i].numberOfStates;
+        in[0].addEdge(in[i].start,1,"$");
+    }
+    in[0].numberOfStates++;
+    for (int i = 0; i < in.size(); ++i) {
+        in[0].addEdge(in[i].numberOfStates,in[i].end,"$");
+    }
+    for (int i = 1; i < in.size(); ++i) {
+        Nfa second=in[i];
+        for (map<int, map<string, vector<int>>>::iterator it = second.transitions.begin();it != second.transitions.end(); ++it) {
+            in[0].transitions[it->first] = it->second;
+        }
+        for (int i = 0; i < second.accepting.size(); ++i) {
+            in[0].accepting.push_back(second.accepting[i]);
+
+        }
+        for (map<int, string>::iterator it = second.tags.begin(); it != second.tags.end(); ++it) {
+            in[0].tags[it->first] = it->second;
+        }
+
+    }
+    accepting.push_back(numberOfStates);
+    end=numberOfStates;
+    start=1;
+    return in[0];
+
+}
+
+
+
+Nfa Nfa::groupNfas(list<Nfa> nfas) {
+    Nfa n = nfas.front();
+    nfas.erase(nfas.begin());
+    while(!nfas.empty()){
+        n.orWith(nfas.front());
+        nfas.erase(nfas.begin());
     }
     return n;
 }

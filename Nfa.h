@@ -36,7 +36,8 @@ class Nfa{
         int getEnd();
         string parenthesis(string reg);
         Nfa getThis();
-        Nfa groupNfas(list<Nfa>* nfas);
+        Nfa groupNfas(list<Nfa> nfas);
+        Nfa orAll(vector<Nfa> in);
         Nfa createGroupedNfa(map<string, string>* regexes);
         set<string> getAlphabets();
 };

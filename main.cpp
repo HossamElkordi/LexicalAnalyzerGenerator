@@ -77,9 +77,10 @@ int main() {
 
     // Nfa.create takes a single regex and outputs it Nfa
     //the is a function called orWith that x1.orWith(x2) groups x1 and 2 together
-        //nfa's testing unit
+    //nfa's testing unit
+
     Nfa temp=Nfa();
-    temp.createNfa("(10|101|110)*","a", true);
+    temp.createNfa("(a|b|c|d|e|f)((a|b|c|d|e|f)|(0|1|2|3|4))*","a", true);
     //printing transitions
     for(map<int,map<string,vector<int>>>::iterator it = temp.transitions.begin(); it != temp.transitions.end(); ++it) {
         cout<<it->first<<"--> ";
@@ -97,9 +98,9 @@ int main() {
         cout<<"accepted state"<<i<<" "<<temp.accepting[i]<<endl;
     }
     //printing tags
-    for(map<int,string>::iterator it2 = temp.tags.begin(); it2 != temp.tags.end(); ++it2) {
-        cout<<it2->first<<" : "<<it2->second<<endl;
-    }
+//    for(map<int,string>::iterator it2 = temp.tags.begin(); it2 != temp.tags.end(); ++it2) {
+//        cout<<it2->first<<" : "<<it2->second<<endl;
+//    }
 
     //end
 

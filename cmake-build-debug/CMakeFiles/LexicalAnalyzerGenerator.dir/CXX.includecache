@@ -6,23 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.h
+D:/Uni/8th/compilers/lex ana/Dfa.h
 State.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h
+D:/Uni/8th/compilers/lex ana/State.h
 GlobalStructures.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/GlobalStructures.h
+D:/Uni/8th/compilers/lex ana/GlobalStructures.h
 map
 -
 vector
 -
 
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/GlobalStructures.h
+D:/Uni/8th/compilers/lex ana/GlobalStructures.h
 State.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h
+D:/Uni/8th/compilers/lex ana/State.h
 set
 -
 
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.h
+D:/Uni/8th/compilers/lex ana/InputParser.h
 fstream
 -
 list
@@ -30,15 +30,15 @@ list
 regex
 -
 
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Nfa.h
+D:/Uni/8th/compilers/lex ana/Nfa.h
 vector
 -
 map
 -
 GlobalStructures.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/GlobalStructures.h
+D:/Uni/8th/compilers/lex ana/GlobalStructures.h
 
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h
+D:/Uni/8th/compilers/lex ana/State.h
 string
 -
 list
@@ -48,15 +48,15 @@ set
 map
 -
 
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/main.cpp
+D:/Uni/8th/compilers/lex ana/main.cpp
 iostream
 -
 InputParser.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.h
+D:/Uni/8th/compilers/lex ana/InputParser.h
 Dfa.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.h
+D:/Uni/8th/compilers/lex ana/Dfa.h
 Nfa.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Nfa.h
+D:/Uni/8th/compilers/lex ana/Nfa.h
 set
 -
 
