@@ -16,6 +16,7 @@ void printSet(set<int> s){
 }
 
 int main() {
+
 ////  test the dfa
 //    map<int, map<string, vector<int>>> nfa;
 //    list<string> alpha = {"0", "1"};
@@ -80,7 +81,7 @@ int main() {
     //nfa's testing unit
 
     Nfa temp=Nfa();
-    temp.createNfa("(a|b|c|d|e|f)((a|b|c|d|e|f)|(0|1|2|3|4))*","a", true);
+    temp.createNfa("(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z)((a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z)|(0|1|2|3|4|5|6|7|8|9))*","a");
     //printing transitions
     for(map<int,map<string,vector<int>>>::iterator it = temp.transitions.begin(); it != temp.transitions.end(); ++it) {
         cout<<it->first<<"--> ";
@@ -113,5 +114,6 @@ int main() {
 //    Dfa dfa(grouped.transitions, grouped.getAlphabets(), grouped.tags, ip.getRegexPriority());
 //    dfa.createDFA();
 //    End Of Main Program
+
     return 0;
 }

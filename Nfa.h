@@ -26,19 +26,18 @@ class Nfa{
         void setstart(int in);
         void offset(int offsetAmnt);
         void setend(int in );
-        void createNfa(string reg,string name,bool parenthesis);
+        void createNfa(string reg,string name);
         void andWith(Nfa second);
         void orWith(Nfa second);
         void kleen();
         void pKleen();
-        void execute(char op,string operand);
+        void executeString(string reg);
         int getStart();
         int getEnd();
         string parenthesis(string reg);
         Nfa getThis();
-        Nfa groupNfas(list<Nfa> nfas);
+        void thiseuqalsnfa(Nfa temp);
         Nfa orAll(vector<Nfa> in);
-        Nfa createGroupedNfa(map<string, string>* regexes);
         set<string> getAlphabets();
 };
 
