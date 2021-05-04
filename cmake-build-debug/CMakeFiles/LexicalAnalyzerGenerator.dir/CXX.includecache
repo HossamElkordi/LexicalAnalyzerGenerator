@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.cpp
+Dfa.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.h
+
 /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.h
 State.h
 /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h

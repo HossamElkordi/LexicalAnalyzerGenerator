@@ -18,11 +18,14 @@ void Dfa::epsClosure(set<int> *from) {
     vector<int> trans;
     set<int> to, temp;
     move(from, "$", &to);
-    while (!to.empty() && !isSubset(from, &to)) {
+    int size = to.size();
+    while (!to.empty()) {
         copy(to.begin(), to.end(), inserter(temp, temp.begin()));
         to.clear();
         move(&temp, "$", &to);
         copy(temp.begin(), temp.end(), inserter(*from, from->begin()));
+        if(from->size() == size) break;
+        else size = from->size();
         temp.clear();
     }
 }
@@ -79,14 +82,6 @@ bool Dfa::contains(vector<set<int>> *pVector, set<int> set) {
         if(i == set) return true;
     }
     return false;
-}
-
-bool Dfa::isSubset(set<int>* from, set<int>* to){
-    if(to->empty()) return true;
-    for(auto &i : *to){
-        if(from->find(i) == from->end()) return false;
-    }
-    return true;
 }
 
 map<set<int>, map<string, set<int>>> Dfa::getGraph() {
