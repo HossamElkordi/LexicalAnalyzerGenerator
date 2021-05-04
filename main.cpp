@@ -95,32 +95,32 @@ int main() {
     temp=temp.getfromlist(regs);
     //temp.createNfa("(a|b)","7amo");
     //printing transitions
-    for(map<int,map<string,vector<int>>>::iterator it = temp.transitions.begin(); it != temp.transitions.end(); ++it) {
-        cout<<it->first<<"--> ";
-        for(map<string,vector<int>>::iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
-            cout<<"   "<<it2->first;
-            for (int j = 0; j < it2->second.size(); ++j) {
-                cout<<"-"<<it2->second[j]<<"  ";
-            }
-            cout<<endl;
-        }
-        cout<<endl;
-    }
+//    for(map<int,map<string,vector<int>>>::iterator it = temp.transitions.begin(); it != temp.transitions.end(); ++it) {
+//        cout<<it->first<<"--> ";
+//        for(map<string,vector<int>>::iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
+//            cout<<"   "<<it2->first;
+//            for (int j = 0; j < it2->second.size(); ++j) {
+//                cout<<"-"<<it2->second[j]<<"  ";
+//            }
+//            cout<<endl;
+//        }
+//        cout<<endl;
+//    }
     //printing accepted states
-    for (int i = 0; i < temp.accepting.size(); ++i) {
-        cout<<"accepted state"<<i<<" "<<temp.accepting[i]<<endl;
-    }
-    //printing tags
-    for(map<int,string>::iterator it2 = temp.tags.begin(); it2 != temp.tags.end(); ++it2) {
-        cout<<it2->first<<" : "<<it2->second<<endl;
-    }
+//    for (int i = 0; i < temp.accepting.size(); ++i) {
+//        cout<<"accepted state"<<i<<" "<<temp.accepting[i]<<endl;
+//    }
+//    //printing tags
+//    for(map<int,string>::iterator it2 = temp.tags.begin(); it2 != temp.tags.end(); ++it2) {
+//        cout<<it2->first<<" : "<<it2->second<<endl;
+//    }
     Dfa dfa(temp.transitions, temp.getAlphabets(), temp.tags, ip.getRegexPriority());
     dfa.createDFA();
-        map<set<int>, map<string, set<int>>> dfaGraph = dfa.getGraph();
+    map<set<int>, map<string, set<int>>> dfaGraph = dfa.getGraph();
     map<set<int>, string> dfaAcc = dfa.getDfaAccepted();
 
     cout << "DFA State Count: ";
-    cout << dfaGraph.size() << endl;
+    cout << dfaAcc.size() << endl;
 
    /* for(auto i : dfaGraph){
         printSet(i.first);

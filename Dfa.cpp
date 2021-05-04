@@ -14,11 +14,11 @@ Dfa::Dfa(map<int, map<string, vector<int>>> nfaGraph, set<string> inputs, map<in
 }
 
 void Dfa::epsClosure(set<int> *from) {
-    if(from->empty()) return;
+    if (from->empty()) return;
     vector<int> trans;
     set<int> to, temp;
     move(from, "$", &to);
-    while(!to.empty()){
+    while (!to.empty() && !isSubset(from, &to)) {
         copy(to.begin(), to.end(), inserter(temp, temp.begin()));
         to.clear();
         move(&temp, "$", &to);
@@ -46,8 +46,8 @@ void Dfa::createDFA() {
     while(!dStates.empty()){
         set<int> t = dStates.at(0), u;
         dStates.erase(dStates.begin());
-        checker.push_back(t);
         epsClosure(&t);
+        checker.push_back(t);
         if(isStart){
             start = t;
             isStart = false;
@@ -61,11 +61,12 @@ void Dfa::createDFA() {
             graph[t][c] = u;
             u.clear();
         }
-        for(auto & acceptingState : acceptingStates){
-            if(t.find(acceptingState.first) != t.end()){
-                if(dfaAccepted.find(t) != dfaAccepted.end()){
-                    if(dfaAccepted[t] > acceptingState.second) dfaAccepted[t] = acceptingState.second;
-                }else{
+        for(auto & acceptingState : acceptingStates){ // loop over nfa acc
+            if(regexPriority.find(acceptingState.second) == regexPriority.end()) continue;
+            if(t.find(acceptingState.first) != t.end()){ // if in the subset
+                if(dfaAccepted.find(t) != dfaAccepted.end()){ // if already accepted
+                    if(regexPriority[dfaAccepted[t]] > regexPriority[acceptingState.second]) dfaAccepted[t] = acceptingState.second;
+                }else{ // if not accepted
                     dfaAccepted[t] = acceptingState.second;
                 }
             }
@@ -78,6 +79,14 @@ bool Dfa::contains(vector<set<int>> *pVector, set<int> set) {
         if(i == set) return true;
     }
     return false;
+}
+
+bool Dfa::isSubset(set<int>* from, set<int>* to){
+    if(to->empty()) return true;
+    for(auto &i : *to){
+        if(from->find(i) == from->end()) return false;
+    }
+    return true;
 }
 
 map<set<int>, map<string, set<int>>> Dfa::getGraph() {

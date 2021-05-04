@@ -506,6 +506,7 @@ set<string> Nfa::getAlphabets() {
             alpha.insert(j.first);
         }
     }
+    alpha.erase("$");
     return alpha;
 }
 

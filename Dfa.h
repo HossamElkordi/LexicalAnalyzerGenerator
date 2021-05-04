@@ -22,6 +22,7 @@ class Dfa{
         set<int> start;
 
         bool contains(vector<set<int>> *pVector, set<int> set);
+        bool isSubset(set<int>* from, set<int>* to);
 
     public:
         Dfa();
