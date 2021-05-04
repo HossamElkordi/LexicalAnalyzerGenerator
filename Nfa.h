@@ -26,7 +26,7 @@ class Nfa{
         void setstart(int in);
         void offset(int offsetAmnt);
         void setend(int in );
-        void createNfa(string reg,string name);
+        void createNfa(string reg);
         void andWith(Nfa second);
         void orWith(Nfa second);
         void kleen();
@@ -39,6 +39,7 @@ class Nfa{
         void thiseuqalsnfa(Nfa temp);
         Nfa orAll(vector<Nfa> in);
         set<string> getAlphabets();
+        Nfa getfromlist(vector<string> in);
 };
 
 #endif //LEXICALANALYZERGENERATOR_NFA_H

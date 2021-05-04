@@ -145,7 +145,7 @@ void Nfa::orWith(Nfa second) {
 }
 
 void Nfa::kleen() {
-    string tg=tags[end];
+    string tg="("+tags[end]+")";
     tg+="*";
     numberOfStates++;
     start=1;
@@ -162,7 +162,7 @@ void Nfa::kleen() {
 }
 
 void Nfa::pKleen() {
-    string tg=tags[end];
+    string tg="("+tags[end]+")";
     tg+="+";
     numberOfStates++;
     start=1;
@@ -264,7 +264,7 @@ void Nfa::executeString(string reg){
                 andWith(prev);
             }
             Nfa temp;
-            temp.createNfa(reg.substr(i, getNext(reg,i)-i+1),"a");
+            temp.createNfa(reg.substr(i, getNext(reg,i)-i+1));
             prev.thiseuqalsnfa(temp);
             i= getNext(reg,i);
            /* if(start==0&&prev.start!=0){
@@ -283,6 +283,22 @@ void Nfa::executeString(string reg){
             prev.pKleen();
             i++;
         }
+        else{
+            if(reg[i]=='\\') {
+                i++;
+                continue;
+            }
+            else{
+                if(start==0&&prev.start!=0){
+                    thiseuqalsnfa(prev);
+                }
+                else if(start!=0&&prev.start!=0){
+                    andWith(prev);
+                }
+                prev=Nfa(reg[i]);
+                ++i;
+            }
+        }
     }
     if(start==0&&prev.start!=0){
         thiseuqalsnfa(prev);
@@ -292,7 +308,7 @@ void Nfa::executeString(string reg){
     }
 }
 
-void Nfa::createNfa(string reg,string name) {
+void Nfa::createNfa(string reg) {
     start=0;
     end=0;
     while(reg[0]=='('&&getNext(reg,0)==reg.size()-1){
@@ -447,10 +463,12 @@ Nfa Nfa::orAll(vector<Nfa> in){
     in[0].offset(1);
     nstates+=in[0].numberOfStates;
     in[0].addEdge(in[0].start,1,"$");
+    string tg="("+in[0].tags[in[0].end]+")";
     for (int i = 1; i < in.size(); ++i) {
         in[i].offset(nstates);
         nstates+=in[i].numberOfStates;
         in[0].addEdge(in[i].start,1,"$");
+        tg=tg+"|"+"("+in[i].tags[in[i].end]+")";
     }
     in[0].numberOfStates=nstates+1;
     for (int i = 0; i < in.size(); ++i) {
@@ -474,6 +492,7 @@ Nfa Nfa::orAll(vector<Nfa> in){
     in[0].accepting.push_back(in[0].numberOfStates);
     in[0].end=in[0].numberOfStates;
     start=1;
+    in[0].tags[in[0].end]=tg;
     return in[0];
 
 }
@@ -487,4 +506,14 @@ set<string> Nfa::getAlphabets() {
         }
     }
     return alpha;
+}
+
+Nfa Nfa::getfromlist(vector<string>in){
+    vector<Nfa> temp;
+    for(auto i:in){
+        Nfa tempo;
+        tempo.createNfa(i);
+        temp.push_back(tempo.getThis());
+    }
+    return orAll(temp);
 }

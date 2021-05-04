@@ -80,8 +80,21 @@ int main() {
     //the is a function called orWith that x1.orWith(x2) groups x1 and 2 together
     //nfa's testing unit
 
+
+
+    //end
+
+//    Main Program
+    InputParser ip;
+    ip.readFile();
+    Nfa nfa;
+    map<string, string> regs = ip.getRegexes();
+    vector<string> regexes;
+    for(auto i : regs){
+        regexes.push_back(i.second);
+    }
     Nfa temp=Nfa();
-    temp.createNfa("(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z)((a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z)|(0|1|2|3|4|5|6|7|8|9))*","a");
+    temp=temp.getfromlist(regexes);
     //printing transitions
     for(map<int,map<string,vector<int>>>::iterator it = temp.transitions.begin(); it != temp.transitions.end(); ++it) {
         cout<<it->first<<"--> ";
@@ -99,17 +112,10 @@ int main() {
         cout<<"accepted state"<<i<<" "<<temp.accepting[i]<<endl;
     }
     //printing tags
-//    for(map<int,string>::iterator it2 = temp.tags.begin(); it2 != temp.tags.end(); ++it2) {
-//        cout<<it2->first<<" : "<<it2->second<<endl;
-//    }
+    for(map<int,string>::iterator it2 = temp.tags.begin(); it2 != temp.tags.end(); ++it2) {
+        cout<<it2->first<<" : "<<it2->second<<endl;
+    }
 
-    //end
-
-//    Main Program
-//    InputParser ip;
-//    ip.readFile();
-//    Nfa nfa;
-//    map<string, string> regs = ip.getRegexes();
 //    Nfa grouped = nfa.createGroupedNfa(&regs);
 //    Dfa dfa(grouped.transitions, grouped.getAlphabets(), grouped.tags, ip.getRegexPriority());
 //    dfa.createDFA();
