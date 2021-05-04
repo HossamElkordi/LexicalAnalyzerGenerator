@@ -264,7 +264,7 @@ void Nfa::executeString(string reg){
                 andWith(prev);
             }
             Nfa temp;
-            temp.createNfa(reg.substr(i, getNext(reg,i)-i+1));
+            temp.createNfa(reg.substr(i, getNext(reg,i)-i+1),reg.substr(i, getNext(reg,i)-i+1));
             prev.thiseuqalsnfa(temp);
             i= getNext(reg,i);
            /* if(start==0&&prev.start!=0){
@@ -308,7 +308,7 @@ void Nfa::executeString(string reg){
     }
 }
 
-void Nfa::createNfa(string reg) {
+void Nfa::createNfa(string reg,string type) {
     start=0;
     end=0;
     while(reg[0]=='('&&getNext(reg,0)==reg.size()-1){
@@ -367,6 +367,7 @@ void Nfa::createNfa(string reg) {
         thiseuqalsnfa(seperatedNfa[0]);
     else
         thiseuqalsnfa(orAll(seperatedNfa));
+    tags[end]=type;
 }
 
 void Nfa::setend(int in) {
@@ -508,11 +509,11 @@ set<string> Nfa::getAlphabets() {
     return alpha;
 }
 
-Nfa Nfa::getfromlist(vector<string>in){
+Nfa Nfa::getfromlist(map<string,string>in){
     vector<Nfa> temp;
     for(auto i:in){
         Nfa tempo;
-        tempo.createNfa(i);
+        tempo.createNfa(i.second,i.first);
         temp.push_back(tempo.getThis());
     }
     return orAll(temp);

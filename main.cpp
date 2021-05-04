@@ -88,13 +88,12 @@ int main() {
     InputParser ip;
     ip.readFile();
     Nfa nfa;
-    map<string, string> regs = ip.getRegexes();
-    vector<string> regexes;
-    for(auto i : regs){
-        regexes.push_back(i.second);
-    }
+    map<string, string> regs; /*= ip.getRegexes();*/
+    regs["num"]="(a)((a)|(0))*";
+    regs["relop"]="\\=\\=|!\\=";
     Nfa temp=Nfa();
-    temp=temp.getfromlist(regexes);
+    temp=temp.getfromlist(regs);
+    //temp.createNfa("(a|b)","7amo");
     //printing transitions
     for(map<int,map<string,vector<int>>>::iterator it = temp.transitions.begin(); it != temp.transitions.end(); ++it) {
         cout<<it->first<<"--> ";
@@ -115,10 +114,28 @@ int main() {
     for(map<int,string>::iterator it2 = temp.tags.begin(); it2 != temp.tags.end(); ++it2) {
         cout<<it2->first<<" : "<<it2->second<<endl;
     }
+    Dfa dfa(temp.transitions, temp.getAlphabets(), temp.tags, ip.getRegexPriority());
+    dfa.createDFA();
+        map<set<int>, map<string, set<int>>> dfaGraph = dfa.getGraph();
+    map<set<int>, string> dfaAcc = dfa.getDfaAccepted();
 
-//    Nfa grouped = nfa.createGroupedNfa(&regs);
-//    Dfa dfa(grouped.transitions, grouped.getAlphabets(), grouped.tags, ip.getRegexPriority());
-//    dfa.createDFA();
+    cout << "DFA State Count: ";
+    cout << dfaGraph.size() << endl;
+
+   /* for(auto i : dfaGraph){
+        printSet(i.first);
+        cout << "\t\t0 - > ";
+        printSet(i.second["0"]);
+        cout << "\t\t1 - > ";
+        printSet(i.second["1"]);
+        cout << "\n";
+    }*/
+    cout << "\n";
+    for(auto i : dfaAcc){
+        printSet(i.first);
+        cout << " as " + i.second << endl;
+    }
+
 //    End Of Main Program
 
     return 0;
