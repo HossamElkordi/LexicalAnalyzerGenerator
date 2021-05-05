@@ -33,6 +33,11 @@ vector<Token> search(const string& line)
         }
         ++i;
     }
+    if(i == temp)
+    {
+        type=dfaAccepted[CurrentState];
+        answer.emplace_back(type,line.substr(old,i));
+    }
     return answer;
 }
 
