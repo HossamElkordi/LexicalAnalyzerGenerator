@@ -95,3 +95,22 @@ map<set<int>, string> Dfa::getDfaAccepted() {
 set<int> Dfa::getStart() {
     return start;
 }
+
+void Dfa::translateGraph(map<string, map<string, string>> *nwG, map<string, string> *nwAcc, string* nwS) {
+    map<set<int>, string> mapping;
+    int j = 0;
+    for(const auto& i : graph){
+        string s = "S" + to_string(j++);
+        mapping[i.first] = s;
+    }
+    for(const auto& i : graph){
+        for(const auto& k : i.second){
+            if(k.second.size() == 0) (*nwG)[mapping[i.first]][k.first] = "";
+            else (*nwG)[mapping[i.first]][k.first] = mapping[k.second];
+        }
+    }
+    for(auto i : dfaAccepted){
+        (*nwAcc)[mapping[i.first]] = i.second;
+    }
+    (*(nwS)) = mapping[start];
+}

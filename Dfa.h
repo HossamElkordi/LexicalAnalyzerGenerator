@@ -32,6 +32,7 @@ class Dfa{
         map<set<int>, map<string, set<int>>> getGraph();
         map<set<int>, string> getDfaAccepted();
         set<int> getStart();
+        void translateGraph(map<string, map<string, string>>* nwG, map<string, string>* nwAcc, string* nwS);
 };
 
 #endif //LEXICALANALYZERGENERATOR_DFA_H

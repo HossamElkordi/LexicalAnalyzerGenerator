@@ -88,9 +88,9 @@ int main() {
     InputParser ip;
     ip.readFile();
     Nfa nfa;
-    map<string, string> regs; /*= ip.getRegexes();*/
-    regs["num"]="(a)((a)|(0))*";
-    regs["relop"]="\\=\\=|!\\=";
+    map<string, string> regs = ip.getRegexes();
+//    regs["num"]="(a)((a)|(0))*";
+//    regs["relop"]="\\=\\=|!\\=";
     Nfa temp=Nfa();
     temp=temp.getfromlist(regs);
     //temp.createNfa("(a|b)","7amo");
@@ -118,9 +118,13 @@ int main() {
     dfa.createDFA();
     map<set<int>, map<string, set<int>>> dfaGraph = dfa.getGraph();
     map<set<int>, string> dfaAcc = dfa.getDfaAccepted();
+    string start;
+    map<string, map<string, string>> tranlatedGraph;
+    map<string, string> translatedAcc;
+    dfa.translateGraph(&tranlatedGraph, &translatedAcc, &start);
 
     cout << "DFA State Count: ";
-    cout << dfaAcc.size() << endl;
+    cout << translatedAcc.size() << endl;
 
    /* for(auto i : dfaGraph){
         printSet(i.first);
@@ -131,9 +135,9 @@ int main() {
         cout << "\n";
     }*/
     cout << "\n";
-    for(auto i : dfaAcc){
-        printSet(i.first);
-        cout << " as " + i.second << endl;
+    for(auto i : translatedAcc){
+//        printSet(i.first);
+        cout << i.first + "\tas\t\t" + i.second << endl;
     }
 
 //    End Of Main Program
