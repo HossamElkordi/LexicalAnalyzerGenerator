@@ -5,9 +5,9 @@
 #include <fstream>
 #include "InputLanguageParser.h"
 
-map<set<int>, string> dfaAccepted;
-map<set<int>, map<string, set<int>>> graph;
-set<int> Start;
+map<string, string> dfaAccepted;
+map<string, map<string, string>> graph;
+string Start;
 
 vector<Token> search(const string& line)
 {
@@ -15,16 +15,18 @@ vector<Token> search(const string& line)
     int old=0,temp = 0,i=0;
     string type;
     //TODO start state initialize
-    set<int> CurrentState = Start;
-    while(i<line.size()-1)
+    string CurrentState = Start;
+    while(i<line.size())
     {
         if(graph[CurrentState].find(string{line.at(i)}) != graph[CurrentState].end())
             CurrentState=graph[CurrentState][string{line.at(i)}];
         else
         {
-            answer.emplace_back(type,line.substr(old,temp));
-            i = temp;
-            old = temp;
+            answer.emplace_back(type,line.substr(old,temp+1));
+            temp = i;
+            old = i;
+            --i;
+            CurrentState=Start;
         }
         if(dfaAccepted.find(CurrentState)!=dfaAccepted.end())
         {
@@ -33,7 +35,7 @@ vector<Token> search(const string& line)
         }
         ++i;
     }
-    if(i == temp)
+    if(i == temp + 1)
     {
         type=dfaAccepted[CurrentState];
         answer.emplace_back(type,line.substr(old,i));
