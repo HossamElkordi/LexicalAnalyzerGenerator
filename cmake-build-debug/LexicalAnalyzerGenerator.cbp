@@ -91,10 +91,22 @@
 		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/GlobalStructures.h">
 			<Option target="LexicalAnalyzerGenerator"/>
 		</Unit>
+		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputLanguageParser.cpp">
+			<Option target="LexicalAnalyzerGenerator"/>
+		</Unit>
+		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputLanguageParser.h">
+			<Option target="LexicalAnalyzerGenerator"/>
+		</Unit>
 		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.cpp">
 			<Option target="LexicalAnalyzerGenerator"/>
 		</Unit>
 		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.h">
+			<Option target="LexicalAnalyzerGenerator"/>
+		</Unit>
+		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/MinimizedDfa.cpp">
+			<Option target="LexicalAnalyzerGenerator"/>
+		</Unit>
+		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/MinimizedDfa.h">
 			<Option target="LexicalAnalyzerGenerator"/>
 		</Unit>
 		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Nfa.cpp">
@@ -109,7 +121,16 @@
 		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h">
 			<Option target="LexicalAnalyzerGenerator"/>
 		</Unit>
+		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Token.cpp">
+			<Option target="LexicalAnalyzerGenerator"/>
+		</Unit>
+		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Token.h">
+			<Option target="LexicalAnalyzerGenerator"/>
+		</Unit>
 		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/main.cpp">
+			<Option target="LexicalAnalyzerGenerator"/>
+		</Unit>
+		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/temp.cpp">
 			<Option target="LexicalAnalyzerGenerator"/>
 		</Unit>
 		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/CMakeLists.txt">

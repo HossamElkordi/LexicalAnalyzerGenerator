@@ -5,10 +5,14 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.o"
+  "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputLanguageParser.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o"
   "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.o"
+  "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/MinimizedDfa.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.o"
   "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Nfa.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.o"
   "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o"
+  "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Token.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.o"
   "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/main.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o"
+  "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/temp.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -13,12 +13,12 @@ using namespace std;
 
 class InputParser{
     private:
+        string filePath;
         list<string> keywords;
         list<string> punctuations;
         map<string, string> regexes;
         map<string, int> regexPriority;
         map<string, string> definitions;
-        const string filePath = "grammar.txt";
 
         void split(string str, string seperator, list<string> * strings);
         void parseKeysAndPuncs(string line, list<string> *storage);
@@ -28,6 +28,7 @@ class InputParser{
         string expandDashes(string in);
     public:
         InputParser();
+        explicit InputParser(string path);
         void readFile();
         list<string> getKeywords();
         list<string> getPunctuations();

@@ -12,6 +12,7 @@ class Token{
         string type;
         string lexeme;
     public:
+        Token();
         Token(string type,string lexeme);
         string GetType();
         string GetLexeme();

@@ -18,3 +18,5 @@ Token::Token(string type, string lexeme) {
     this->lexeme=lexeme;
     this->type=type;
 }
+
+Token::Token() = default;

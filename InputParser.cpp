@@ -2,9 +2,14 @@
 // Created by hossam on 30/04/2021.
 //
 #include <iostream>
+#include <utility>
 #include "InputParser.h"
 
 InputParser::InputParser() = default;
+
+InputParser::InputParser(string path) {
+    filePath = path;
+}
 
 void InputParser::readFile() {
     fstream file;

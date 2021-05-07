@@ -169,6 +169,33 @@ Dfa.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.s
 .PHONY : Dfa.cpp.s
 
+InputLanguageParser.o: InputLanguageParser.cpp.o
+
+.PHONY : InputLanguageParser.o
+
+# target to build an object file
+InputLanguageParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o
+.PHONY : InputLanguageParser.cpp.o
+
+InputLanguageParser.i: InputLanguageParser.cpp.i
+
+.PHONY : InputLanguageParser.i
+
+# target to preprocess a source file
+InputLanguageParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.i
+.PHONY : InputLanguageParser.cpp.i
+
+InputLanguageParser.s: InputLanguageParser.cpp.s
+
+.PHONY : InputLanguageParser.s
+
+# target to generate assembly for a file
+InputLanguageParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.s
+.PHONY : InputLanguageParser.cpp.s
+
 InputParser.o: InputParser.cpp.o
 
 .PHONY : InputParser.o
@@ -195,6 +222,33 @@ InputParser.s: InputParser.cpp.s
 InputParser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.s
 .PHONY : InputParser.cpp.s
+
+MinimizedDfa.o: MinimizedDfa.cpp.o
+
+.PHONY : MinimizedDfa.o
+
+# target to build an object file
+MinimizedDfa.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.o
+.PHONY : MinimizedDfa.cpp.o
+
+MinimizedDfa.i: MinimizedDfa.cpp.i
+
+.PHONY : MinimizedDfa.i
+
+# target to preprocess a source file
+MinimizedDfa.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.i
+.PHONY : MinimizedDfa.cpp.i
+
+MinimizedDfa.s: MinimizedDfa.cpp.s
+
+.PHONY : MinimizedDfa.s
+
+# target to generate assembly for a file
+MinimizedDfa.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.s
+.PHONY : MinimizedDfa.cpp.s
 
 Nfa.o: Nfa.cpp.o
 
@@ -250,6 +304,33 @@ State.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.s
 .PHONY : State.cpp.s
 
+Token.o: Token.cpp.o
+
+.PHONY : Token.o
+
+# target to build an object file
+Token.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.o
+.PHONY : Token.cpp.o
+
+Token.i: Token.cpp.i
+
+.PHONY : Token.i
+
+# target to preprocess a source file
+Token.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.i
+.PHONY : Token.cpp.i
+
+Token.s: Token.cpp.s
+
+.PHONY : Token.s
+
+# target to generate assembly for a file
+Token.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.s
+.PHONY : Token.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -277,6 +358,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+temp.o: temp.cpp.o
+
+.PHONY : temp.o
+
+# target to build an object file
+temp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.o
+.PHONY : temp.cpp.o
+
+temp.i: temp.cpp.i
+
+.PHONY : temp.i
+
+# target to preprocess a source file
+temp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.i
+.PHONY : temp.cpp.i
+
+temp.s: temp.cpp.s
+
+.PHONY : temp.s
+
+# target to generate assembly for a file
+temp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.s
+.PHONY : temp.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -289,18 +397,30 @@ help:
 	@echo "... Dfa.o"
 	@echo "... Dfa.i"
 	@echo "... Dfa.s"
+	@echo "... InputLanguageParser.o"
+	@echo "... InputLanguageParser.i"
+	@echo "... InputLanguageParser.s"
 	@echo "... InputParser.o"
 	@echo "... InputParser.i"
 	@echo "... InputParser.s"
+	@echo "... MinimizedDfa.o"
+	@echo "... MinimizedDfa.i"
+	@echo "... MinimizedDfa.s"
 	@echo "... Nfa.o"
 	@echo "... Nfa.i"
 	@echo "... Nfa.s"
 	@echo "... State.o"
 	@echo "... State.i"
 	@echo "... State.s"
+	@echo "... Token.o"
+	@echo "... Token.i"
+	@echo "... Token.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... temp.o"
+	@echo "... temp.i"
+	@echo "... temp.s"
 .PHONY : help
 
 
