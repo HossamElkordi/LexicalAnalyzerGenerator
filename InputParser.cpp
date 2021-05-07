@@ -30,10 +30,10 @@ void InputParser::readFile() {
             parseDefsAndRegs(line, &regexes, true, pri);
         }else if(regex_match(line, k)){
             //keywords
-            parseKeysAndPuncs(line, &keywords);
+            parseKeysAndPuncs(line, &keywords, -1);
         }else if(regex_match(line, p)){
             //puctuation
-            parseKeysAndPuncs(line, &punctuations);
+            parseKeysAndPuncs(line, &punctuations, -1);
         }else{
             cout << line + ": Undefined Rule" << endl;
         }
@@ -41,11 +41,16 @@ void InputParser::readFile() {
     }
 }
 
-void InputParser::parseKeysAndPuncs(string line, list<string> *storage) {
+void InputParser::parseKeysAndPuncs(string line, list<string> *storage, int priority) {
     line.erase(line.begin());
     line.erase(line.end() - 1);
     line = regex_replace(line, regex("\\\\"), "");
     split(line, "[\\s]+", storage);
+    for(auto i : *storage){
+        if(regexPriority.find(i) == regexPriority.end()){
+            regexPriority[i] = priority;
+        }
+    }
 }
 
 void InputParser::parseDefsAndRegs(string line, map<string, string> *storage, bool isReg, int priority) {

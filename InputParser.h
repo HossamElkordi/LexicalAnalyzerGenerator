@@ -21,7 +21,7 @@ class InputParser{
         map<string, string> definitions;
 
         void split(string str, string seperator, list<string> * strings);
-        void parseKeysAndPuncs(string line, list<string> *storage);
+        void parseKeysAndPuncs(string line, list<string> *storage, int priority);
         void parseDefsAndRegs(string line, map<string, string> *storage, bool isReg, int priority);
         void replaceRanges(string* reg);
         void replacePreDefined(string* reg);

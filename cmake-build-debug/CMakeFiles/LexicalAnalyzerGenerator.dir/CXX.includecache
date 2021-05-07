@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/Uni/8th/compilers/lex ana/Dfa.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.h
 map
 -
 vector
@@ -14,9 +14,9 @@ vector
 set
 -
 
-D:/Uni/8th/compilers/lex ana/InputLanguageParser.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputLanguageParser.h
 Token.h
-D:/Uni/8th/compilers/lex ana/Token.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Token.h
 fstream
 -
 set
@@ -26,7 +26,7 @@ map
 vector
 -
 
-D:/Uni/8th/compilers/lex ana/InputParser.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.h
 fstream
 -
 list
@@ -34,7 +34,7 @@ list
 regex
 -
 
-D:/Uni/8th/compilers/lex ana/MinimizedDfa.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/MinimizedDfa.h
 map
 -
 set
@@ -42,7 +42,7 @@ set
 vector
 -
 
-D:/Uni/8th/compilers/lex ana/Nfa.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Nfa.h
 vector
 -
 map
@@ -50,23 +50,23 @@ map
 set
 -
 
-D:/Uni/8th/compilers/lex ana/Token.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Token.h
 string
 -
 
-D:/Uni/8th/compilers/lex ana/main.cpp
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/main.cpp
 iostream
 -
 InputParser.h
-D:/Uni/8th/compilers/lex ana/InputParser.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.h
 InputLanguageParser.h
-D:/Uni/8th/compilers/lex ana/InputLanguageParser.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputLanguageParser.h
 Dfa.h
-D:/Uni/8th/compilers/lex ana/Dfa.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.h
 Nfa.h
-D:/Uni/8th/compilers/lex ana/Nfa.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Nfa.h
 MinimizedDfa.h
-D:/Uni/8th/compilers/lex ana/MinimizedDfa.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/MinimizedDfa.h
 Token.h
-D:/Uni/8th/compilers/lex ana/Token.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Token.h
 

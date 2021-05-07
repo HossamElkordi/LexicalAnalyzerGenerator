@@ -9,8 +9,8 @@ Dfa::Dfa() = default;
 Dfa::Dfa(map<int, map<string, vector<int>>> nfaGraph, set<string> inputs, map<int, string> acceStates, map<string, int> regPri) {
     nfa = nfaGraph;
     alphabet = inputs;
-    acceptingStates = acceStates;
     regexPriority = regPri;
+    acceptingStates = acceStates;
 }
 
 void Dfa::epsClosure(set<int> *from) {
