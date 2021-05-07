@@ -160,7 +160,7 @@ int main(int argc, char** argv){
         regs[i] = i;
     }
     for(auto i : ip.getPunctuations()){
-        regs[i] = i;
+        regs[i] = "\\"+i;
     }
 
     cout << "Done Parsing" << endl;
