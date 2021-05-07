@@ -102,22 +102,9 @@ CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Nfa.cpp -o CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.s
 
-CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o: CMakeFiles/LexicalAnalyzerGenerator.dir/flags.make
-CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o: ../State.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o -c /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.cpp
-
-CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.cpp > CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.i
-
-CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.cpp -o CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.s
-
 CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.o: CMakeFiles/LexicalAnalyzerGenerator.dir/flags.make
 CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.o: ../InputParser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.o -c /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.cpp
 
 CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.i: cmake_force
@@ -130,7 +117,7 @@ CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.s: cmake_force
 
 CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.o: CMakeFiles/LexicalAnalyzerGenerator.dir/flags.make
 CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.o: ../Dfa.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.o -c /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.cpp
 
 CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.i: cmake_force
@@ -143,7 +130,7 @@ CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.s: cmake_force
 
 CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.o: CMakeFiles/LexicalAnalyzerGenerator.dir/flags.make
 CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.o: ../Token.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.o -c /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Token.cpp
 
 CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.i: cmake_force
@@ -156,7 +143,7 @@ CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.s: cmake_force
 
 CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o: CMakeFiles/LexicalAnalyzerGenerator.dir/flags.make
 CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o: ../InputLanguageParser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o -c /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputLanguageParser.cpp
 
 CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.i: cmake_force
@@ -169,7 +156,7 @@ CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.s: cmake_force
 
 CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.o: CMakeFiles/LexicalAnalyzerGenerator.dir/flags.make
 CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.o: ../MinimizedDfa.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.o -c /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/MinimizedDfa.cpp
 
 CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.i: cmake_force
@@ -180,46 +167,29 @@ CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/MinimizedDfa.cpp -o CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.s
 
-CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.o: CMakeFiles/LexicalAnalyzerGenerator.dir/flags.make
-CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.o: ../temp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.o -c /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/temp.cpp
-
-CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/temp.cpp > CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.i
-
-CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/temp.cpp -o CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.s
-
 # Object files for target LexicalAnalyzerGenerator
 LexicalAnalyzerGenerator_OBJECTS = \
 "CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o" \
 "CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.o" \
-"CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o" \
 "CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.o" \
 "CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.o" \
 "CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.o" \
 "CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o" \
-"CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.o" \
-"CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.o"
+"CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.o"
 
 # External object files for target LexicalAnalyzerGenerator
 LexicalAnalyzerGenerator_EXTERNAL_OBJECTS =
 
 LexicalAnalyzerGenerator: CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o
 LexicalAnalyzerGenerator: CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.o
-LexicalAnalyzerGenerator: CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o
 LexicalAnalyzerGenerator: CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.o
 LexicalAnalyzerGenerator: CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.o
 LexicalAnalyzerGenerator: CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.o
 LexicalAnalyzerGenerator: CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o
 LexicalAnalyzerGenerator: CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.o
-LexicalAnalyzerGenerator: CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.o
 LexicalAnalyzerGenerator: CMakeFiles/LexicalAnalyzerGenerator.dir/build.make
 LexicalAnalyzerGenerator: CMakeFiles/LexicalAnalyzerGenerator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable LexicalAnalyzerGenerator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable LexicalAnalyzerGenerator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LexicalAnalyzerGenerator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

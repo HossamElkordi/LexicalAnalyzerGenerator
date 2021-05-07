@@ -3,14 +3,9 @@
 
 CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.o: ../Dfa.cpp
 CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.o: ../Dfa.h
-CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.o: ../GlobalStructures.h
-CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.o: ../State.h
 
-CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o: ../Dfa.h
-CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o: ../GlobalStructures.h
 CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o: ../InputLanguageParser.cpp
 CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o: ../InputLanguageParser.h
-CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o: ../State.h
 CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o: ../Token.h
 
 CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.o: ../InputParser.cpp
@@ -19,21 +14,17 @@ CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.o: ../InputParser.h
 CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.o: ../MinimizedDfa.cpp
 CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.o: ../MinimizedDfa.h
 
-CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.o: ../GlobalStructures.h
 CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.o: ../Nfa.cpp
 CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.o: ../Nfa.h
-CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.o: ../State.h
-
-CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o: ../State.cpp
-CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o: ../State.h
 
 CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.o: ../Token.cpp
 CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.o: ../Token.h
 
 CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o: ../Dfa.h
-CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o: ../GlobalStructures.h
+CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o: ../InputLanguageParser.h
 CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o: ../InputParser.h
+CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o: ../MinimizedDfa.h
 CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o: ../Nfa.h
-CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o: ../State.h
+CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o: ../Token.h
 CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o: ../main.cpp
 

@@ -7,7 +7,7 @@
 
 #include <vector>
 #include <map>
-#include "GlobalStructures.h"
+#include <set>
 
 using namespace std;
 

@@ -88,9 +88,6 @@
 		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.h">
 			<Option target="LexicalAnalyzerGenerator"/>
 		</Unit>
-		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/GlobalStructures.h">
-			<Option target="LexicalAnalyzerGenerator"/>
-		</Unit>
 		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputLanguageParser.cpp">
 			<Option target="LexicalAnalyzerGenerator"/>
 		</Unit>
@@ -115,12 +112,6 @@
 		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Nfa.h">
 			<Option target="LexicalAnalyzerGenerator"/>
 		</Unit>
-		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.cpp">
-			<Option target="LexicalAnalyzerGenerator"/>
-		</Unit>
-		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h">
-			<Option target="LexicalAnalyzerGenerator"/>
-		</Unit>
 		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Token.cpp">
 			<Option target="LexicalAnalyzerGenerator"/>
 		</Unit>
@@ -128,9 +119,6 @@
 			<Option target="LexicalAnalyzerGenerator"/>
 		</Unit>
 		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/main.cpp">
-			<Option target="LexicalAnalyzerGenerator"/>
-		</Unit>
-		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/temp.cpp">
 			<Option target="LexicalAnalyzerGenerator"/>
 		</Unit>
 		<Unit filename="/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/CMakeLists.txt">

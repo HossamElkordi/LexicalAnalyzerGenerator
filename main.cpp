@@ -1,11 +1,10 @@
 #include <iostream>
 #include "InputParser.h"
+#include "InputLanguageParser.h"
 #include "Dfa.h"
 #include "Nfa.h"
 #include "MinimizedDfa.h"
-#include "InputParser.h"
 #include "Token.h"
-#include <set>
 
 using namespace std;
 
@@ -164,8 +163,12 @@ int main(int argc, char** argv){
         regs[i] = i;
     }
 
+    cout << "Done Parsing" << endl;
+
     Nfa nfa = Nfa();
     nfa = nfa.getfromlist(regs);
+
+    cout << "NFA created" << endl;
 
     Dfa dfa(nfa.transitions, nfa.getAlphabets(), nfa.tags, ip.getRegexPriority());
     dfa.createDFA();
@@ -173,10 +176,19 @@ int main(int argc, char** argv){
     map<set<int>, string> dfaAccepted = dfa.getDfaAccepted();
     set<int> start = dfa.getStart();
 
+    cout << "DFA created" << endl;
+
     minimizeDfa(&dfaGraph, &dfaAccepted, nfa.getAlphabets(), &start);
 
-//    e3mel el parametersmen el variables ely hena badal Dfa
-//    vector<Token> output = parseFile(inPath,Dfa minimizedDFA);
+    cout << "Minimized DFA created" << endl;
+
+    InputLanguageParser ilp(dfaGraph, dfaAccepted, start);
+    vector<Token> toks = ilp.parseFile(inPath);
+    for(auto i : toks){
+        cout << i.GetLexeme() + "\t" + i.GetType() << endl;
+    }
+
+    cout << "Done parsing tokens" << endl;
 
     return 0;
 }

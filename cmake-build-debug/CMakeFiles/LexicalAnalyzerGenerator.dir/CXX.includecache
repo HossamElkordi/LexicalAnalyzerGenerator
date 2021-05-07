@@ -7,40 +7,24 @@
 #IncludeRegexTransform: 
 
 /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.h
-State.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h
-GlobalStructures.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/GlobalStructures.h
 map
 -
 vector
 -
-
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/GlobalStructures.h
-State.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h
 set
 -
 
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputLanguageParser.cpp
-fstream
--
-InputLanguageParser.h
 /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputLanguageParser.h
-
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputLanguageParser.h
-Dfa.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.h
 Token.h
 /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Token.h
-
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.cpp
-iostream
+fstream
 -
-utility
+set
 -
-InputParser.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.h
+map
+-
+vector
+-
 
 /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.h
 fstream
@@ -49,10 +33,6 @@ list
 -
 regex
 -
-
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/MinimizedDfa.cpp
-MinimizedDfa.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/MinimizedDfa.h
 
 /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/MinimizedDfa.h
 map
@@ -67,22 +47,8 @@ vector
 -
 map
 -
-GlobalStructures.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/GlobalStructures.h
-
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/State.h
-string
--
-list
--
 set
 -
-map
--
-
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Token.cpp
-Token.h
-/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Token.h
 
 /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Token.h
 string
@@ -93,10 +59,14 @@ iostream
 -
 InputParser.h
 /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.h
+InputLanguageParser.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputLanguageParser.h
 Dfa.h
 /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.h
 Nfa.h
 /home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Nfa.h
-set
--
+MinimizedDfa.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/MinimizedDfa.h
+Token.h
+/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Token.h
 

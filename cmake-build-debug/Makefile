@@ -277,33 +277,6 @@ Nfa.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.s
 .PHONY : Nfa.cpp.s
 
-State.o: State.cpp.o
-
-.PHONY : State.o
-
-# target to build an object file
-State.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o
-.PHONY : State.cpp.o
-
-State.i: State.cpp.i
-
-.PHONY : State.i
-
-# target to preprocess a source file
-State.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.i
-.PHONY : State.cpp.i
-
-State.s: State.cpp.s
-
-.PHONY : State.s
-
-# target to generate assembly for a file
-State.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.s
-.PHONY : State.cpp.s
-
 Token.o: Token.cpp.o
 
 .PHONY : Token.o
@@ -358,33 +331,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-temp.o: temp.cpp.o
-
-.PHONY : temp.o
-
-# target to build an object file
-temp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.o
-.PHONY : temp.cpp.o
-
-temp.i: temp.cpp.i
-
-.PHONY : temp.i
-
-# target to preprocess a source file
-temp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.i
-.PHONY : temp.cpp.i
-
-temp.s: temp.cpp.s
-
-.PHONY : temp.s
-
-# target to generate assembly for a file
-temp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LexicalAnalyzerGenerator.dir/build.make CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.s
-.PHONY : temp.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -409,18 +355,12 @@ help:
 	@echo "... Nfa.o"
 	@echo "... Nfa.i"
 	@echo "... Nfa.s"
-	@echo "... State.o"
-	@echo "... State.i"
-	@echo "... State.s"
 	@echo "... Token.o"
 	@echo "... Token.i"
 	@echo "... Token.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... temp.o"
-	@echo "... temp.i"
-	@echo "... temp.s"
 .PHONY : help
 
 

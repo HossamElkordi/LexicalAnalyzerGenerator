@@ -4,10 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.o"
   "CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.o"
   "CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.o"
-  "CMakeFiles/LexicalAnalyzerGenerator.dir/State.cpp.o"
   "CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.o"
   "CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o"
-  "CMakeFiles/LexicalAnalyzerGenerator.dir/temp.cpp.o"
   "LexicalAnalyzerGenerator"
   "LexicalAnalyzerGenerator.pdb"
 )
