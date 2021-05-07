@@ -69,6 +69,7 @@ int main(int argc, char** argv){
     set<int> start = dfa.getStart();
 
     cout << "--------------------------------------------------------------------\nDFA created" << endl;
+    cout<<start.empty()<<endl;
 //    for(auto i : dfaAccepted){
 //        printSet(i.first);
 //        cout << "\tas\t" + i.second << endl;

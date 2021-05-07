@@ -41,9 +41,9 @@ void Dfa::move(set<int> *from, string input, set<int> *to) {
 
 void Dfa::createDFA() {
     vector<set<int>> dStates, checker;
-    set<int> start;
-    start.insert(1);
-    dStates.push_back(start);
+    set<int> s;
+    s.insert(1);
+    dStates.push_back(s);
     bool isStart = true;
 
     while(!dStates.empty()){
