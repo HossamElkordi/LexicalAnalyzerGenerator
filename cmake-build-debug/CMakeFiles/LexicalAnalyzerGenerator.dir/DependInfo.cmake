@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Dfa.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.o"
-  "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputLanguageParser.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.o"
-  "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/InputParser.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.o"
-  "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/MinimizedDfa.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.o"
-  "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Nfa.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.o"
-  "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/Token.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.o"
-  "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/main.cpp" "/home/hossam/Projects/ClionProjects/LexicalAnalyzerGenerator/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.o"
+  "D:/Uni/8th/compilers/lex ana/Dfa.cpp" "D:/Uni/8th/compilers/lex ana/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/Dfa.cpp.obj"
+  "D:/Uni/8th/compilers/lex ana/InputLanguageParser.cpp" "D:/Uni/8th/compilers/lex ana/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/InputLanguageParser.cpp.obj"
+  "D:/Uni/8th/compilers/lex ana/InputParser.cpp" "D:/Uni/8th/compilers/lex ana/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/InputParser.cpp.obj"
+  "D:/Uni/8th/compilers/lex ana/MinimizedDfa.cpp" "D:/Uni/8th/compilers/lex ana/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/MinimizedDfa.cpp.obj"
+  "D:/Uni/8th/compilers/lex ana/Nfa.cpp" "D:/Uni/8th/compilers/lex ana/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/Nfa.cpp.obj"
+  "D:/Uni/8th/compilers/lex ana/Token.cpp" "D:/Uni/8th/compilers/lex ana/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/Token.cpp.obj"
+  "D:/Uni/8th/compilers/lex ana/main.cpp" "D:/Uni/8th/compilers/lex ana/cmake-build-debug/CMakeFiles/LexicalAnalyzerGenerator.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
