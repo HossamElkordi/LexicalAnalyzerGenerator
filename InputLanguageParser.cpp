@@ -17,7 +17,6 @@ vector<Token> InputLanguageParser::search(const string &line) {
     vector<Token>answer;
     int old=0,i=0,temp = 0;
     string type,oldtype;
-    //TODO start state initialize
     set<int> CurrentState = Start;
     while(i<line.size())
     {
@@ -25,7 +24,9 @@ vector<Token> InputLanguageParser::search(const string &line) {
             CurrentState=graph[CurrentState][string(1,line.at(i))];
         else
         {
-            if(type.empty() && old != i)
+            if(type.empty() && oldtype.empty() && old != i)
+                cout<<"Error found";
+            else if(type.empty() && old != i)
             {
                 backtrack:
                 answer.emplace_back(oldtype,line.substr(old,temp-old+1));
