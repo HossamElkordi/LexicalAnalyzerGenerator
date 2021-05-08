@@ -33,7 +33,7 @@ int main(int argc, char** argv){
         regs[i] = "\\"+i;
     }
 
-    cout << "Done Parsingn\n-------------------------------------------------------" << endl;
+    cout << "Done Parsing\n-------------------------------------------------------" << endl;
 
     Nfa nfa = Nfa();
     nfa = nfa.getfromlist(regs);
