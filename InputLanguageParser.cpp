@@ -15,8 +15,8 @@ InputLanguageParser::InputLanguageParser(map<set<int>, map<string, set<int>>> df
 
 vector<Token> InputLanguageParser::search(const string &line) {
     vector<Token>answer;
-    int old=0,i=0;
-    string type;
+    int old=0,i=0,temp = 0;
+    string type,oldtype;
     //TODO start state initialize
     set<int> CurrentState = Start;
     while(i<line.size())
@@ -25,22 +25,47 @@ vector<Token> InputLanguageParser::search(const string &line) {
             CurrentState=graph[CurrentState][string(1,line.at(i))];
         else
         {
-            answer.emplace_back(type,line.substr(old,i-old));
+            if(type.empty() && old != i)
+            {
+                backtrack:
+                answer.emplace_back(oldtype,line.substr(old,temp-old+1));
+                ++temp;
+                i = temp;
+                old = temp;
+                CurrentState=Start;
+                oldtype="";
+                continue;
+            }
+            if(old != i)
+                answer.emplace_back(type,line.substr(old,temp-old+1));
             if(string(1,line.at(i))==" " ||string(1,line.at(i))=="\t")
+            {
                 old = i+1;
+                temp = i+1;
+            }
             else
             {
+                temp = i;
                 old = i;
                 --i;
             }
             CurrentState=Start;
+            oldtype="";
         }
         if(dfaAccepted.find(CurrentState)!=dfaAccepted.end())
+        {
             type=dfaAccepted[CurrentState];
+            oldtype=type;
+            temp = i;
+        }
+        else
+            type = "";
         ++i;
     }
     type=dfaAccepted[CurrentState];
-    answer.emplace_back(type,line.substr(old,i-old));
+    if(type.empty())
+        goto backtrack;
+    answer.emplace_back(type,line.substr(old,temp-old+1));
     return answer;
 }
 
