@@ -5,6 +5,7 @@
 #include "Nfa.h"
 #include "MinimizedDfa.h"
 #include "Token.h"
+#include "OutputGenerator.h"
 
 using namespace std;
 
@@ -18,10 +19,11 @@ void printSet(set<int> s){
 }
 
 int main(int argc, char** argv){
-    string gramPath, inPath;
+    string gramPath, inPath, outPath;
     list<string> temp;
     gramPath = (argc > 2) ? argv[2] : "grammar.txt";
-    inPath = (argc > 2) ? argv[3] : "input.txt";
+    inPath = (argc > 3) ? argv[3] : "input.txt";
+    inPath = (argc > 4) ? argv[4] : "result.txt";
 
     InputParser ip(gramPath);
     ip.readFile();
@@ -33,12 +35,8 @@ int main(int argc, char** argv){
         regs[i] = "\\"+i;
     }
 
-    cout << "Done Parsing\n-------------------------------------------------------" << endl;
-
     Nfa nfa = Nfa();
     nfa = nfa.getfromlist(regs);
-
-    cout << "NFA created" << endl;
 //_____________________
 //    for(map<int,map<string,vector<int>>>::iterator it = nfa.transitions.begin(); it != nfa.transitions.end(); ++it) {
 //        cout<<it->first<<"--> ";
@@ -68,24 +66,21 @@ int main(int argc, char** argv){
     map<set<int>, string> dfaAccepted = dfa.getDfaAccepted();
     set<int> start = dfa.getStart();
 
-    cout << "--------------------------------------------------------------------\nDFA created" << endl;
-    cout<<start.empty()<<endl;
-//    for(auto i : dfaAccepted){
-//        printSet(i.first);
-//        cout << "\tas\t" + i.second << endl;
-//    }
 
     minimizeDfa(&dfaGraph, &dfaAccepted, nfa.getAlphabets(), &start);
-
-    cout << "---------------------------------------------------------------------\nMinimized DFA created" << endl;
+    map<string, map<string, string>> dfaForm;
+    map<string, string> accForm;
+    string startState;
+    dfa.translateGraph(&dfaForm, &accForm, &startState);
 
     InputLanguageParser ilp(dfaGraph, dfaAccepted, start);
     vector<Token> toks = ilp.parseFile(inPath);
-    for(auto i : toks){
-        cout << i.GetLexeme() + "\t" + i.GetType() << endl;
-    }
+    cout<<toks.empty();
 
-    cout << "Done parsing tokens" << endl;
+    OutputGenerator op;
+    op.outputTable(dfaForm);
+    op.outputAccepting(accForm);
+    op.outputResult(outPath, toks);
 
     return 0;
 }

@@ -39,6 +39,7 @@ void InputParser::readFile() {
         }
         ++pri;
     }
+    file.close();
 }
 
 void InputParser::parseKeysAndPuncs(string line, list<string> *storage, int priority) {
