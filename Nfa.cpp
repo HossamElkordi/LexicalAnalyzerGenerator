@@ -14,6 +14,7 @@
 //  the number of state returns a map that has as input a string that says what states
 //  to go to if the nfa was at this state and received the string
 //      *map<int,string>tags that has all the tags for the accepting states
+//________________________________________________________________
 Nfa::Nfa()  =  default;
 Nfa::Nfa(char oneLetter) {
     start= 1;
