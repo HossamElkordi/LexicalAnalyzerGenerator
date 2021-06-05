@@ -54,7 +54,7 @@ vector<Token> InputLanguageParser::search(const string &line) {
             CurrentState=Start;
             oldtype="";
         }
-        if(dfaAccepted.find(CurrentState)!=dfaAccepted.end())
+        if(dfaAccepted.find(CurrentState)!=dfaAccepted.end() && !dfaAccepted[CurrentState].empty())
         {
             type=dfaAccepted[CurrentState];
             oldtype=type;
@@ -65,9 +65,10 @@ vector<Token> InputLanguageParser::search(const string &line) {
         ++i;
     }
     type=dfaAccepted[CurrentState];
-    if(type.empty())
+    if(type.empty() && !line.empty())
         goto backtrack;
-    answer.emplace_back(type,line.substr(old,temp-old+1));
+    if(!line.empty())
+        answer.emplace_back(type,line.substr(old,temp-old+1));
     return answer;
 }
 

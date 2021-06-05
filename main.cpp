@@ -57,7 +57,8 @@ int main(int argc, char** argv){
     Token t;
     while(true){
         t = ilp.getNextToken();
-        if(t.GetLexeme() == "$" && t.GetType() == "eof") break;
+        if(t.GetLexeme() == "$" && t.GetType() == "eof")
+            break;
     }
 
 //    OutputGenerator op;
