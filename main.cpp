@@ -9,15 +9,6 @@
 
 using namespace std;
 
-void printSet(set<int> s){
-    cout << "(";
-    for(int i : s){
-        cout << i;
-        cout << " ";
-    }
-    cout << ")";
-}
-
 int main(int argc, char** argv){
     string gramPath, inPath, outPath;
     list<string> temp;
@@ -52,19 +43,12 @@ int main(int argc, char** argv){
     dfa.translateGraph(&dfaForm, &accForm, &startState);
 
     InputLanguageParser ilp(inPath, dfaGraph, dfaAccepted, start);
-//    vector<Token> toks = ilp.parseFile();
+    vector<Token> toks = ilp.parseFile();
 
-    Token t;
-    while(true){
-        t = ilp.getNextToken();
-        if(t.GetLexeme() == "$" && t.GetType() == "eof")
-            break;
-    }
-
-//    OutputGenerator op;
-//    op.outputTable(dfaForm);
-//    op.outputAccepting(accForm);
-//    op.outputResult(outPath, toks);
+    OutputGenerator op;
+    op.outputTable(dfaForm);
+    op.outputAccepting(accForm);
+    op.outputResult(outPath, toks);
 
     return 0;
 }
