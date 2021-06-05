@@ -51,13 +51,19 @@ int main(int argc, char** argv){
     string startState;
     dfa.translateGraph(&dfaForm, &accForm, &startState);
 
-    InputLanguageParser ilp(dfaGraph, dfaAccepted, start);
-    vector<Token> toks = ilp.parseFile(inPath);
+    InputLanguageParser ilp(inPath, dfaGraph, dfaAccepted, start);
+//    vector<Token> toks = ilp.parseFile();
 
-    OutputGenerator op;
-    op.outputTable(dfaForm);
-    op.outputAccepting(accForm);
-    op.outputResult(outPath, toks);
+    Token t;
+    while(true){
+        t = ilp.getNextToken();
+        if(t.GetLexeme() == "$" && t.GetType() == "eof") break;
+    }
+
+//    OutputGenerator op;
+//    op.outputTable(dfaForm);
+//    op.outputAccepting(accForm);
+//    op.outputResult(outPath, toks);
 
     return 0;
 }

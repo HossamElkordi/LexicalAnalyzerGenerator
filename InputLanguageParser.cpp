@@ -6,11 +6,12 @@
 
 InputLanguageParser::InputLanguageParser() = default;
 
-InputLanguageParser::InputLanguageParser(map<set<int>, map<string, set<int>>> dfaGraph,
+InputLanguageParser::InputLanguageParser(string path, map<set<int>, map<string, set<int>>> dfaGraph,
                                          map<set<int>, string> dfaAcceptedStates, set<int> StartState) {
     graph = dfaGraph;
     dfaAccepted = dfaAcceptedStates;
     Start = StartState;
+    file.open(path, ios::in);
 }
 
 vector<Token> InputLanguageParser::search(const string &line) {
@@ -69,10 +70,8 @@ vector<Token> InputLanguageParser::search(const string &line) {
     return answer;
 }
 
-vector<Token> InputLanguageParser::parseFile(const string &Path) {
+vector<Token> InputLanguageParser::parseFile() {
     vector<Token> answer;
-    fstream file;
-    file.open(Path, ios::in);
     string line;
     while(getline(file, line))
     {
@@ -80,4 +79,21 @@ vector<Token> InputLanguageParser::parseFile(const string &Path) {
             answer.emplace_back(t);
     }
     return answer;
+}
+
+Token InputLanguageParser::getNextToken() {
+    if(file.eof()){
+        return Token("eof", "$");
+    }
+    static vector<Token> tok;
+    Token t;
+    if(tok.empty()){
+        string word;
+        file >> word;
+        tok = search(word);
+    }
+    t = tok.front();
+    cout << t.GetLexeme() << endl;
+    tok.erase(tok.begin());
+    return t;
 }

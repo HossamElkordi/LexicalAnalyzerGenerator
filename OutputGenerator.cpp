@@ -32,7 +32,7 @@ void OutputGenerator::outputAccepting(map<string, string> accForm) {
 void OutputGenerator::outputResult(string filePath, vector<Token> tokens) {
     ofstream file(filePath);
     for(auto i : tokens){
-        file << i.GetType() + "\n";
+        file << i.GetType() + "\t\t" + i.GetLexeme() + "\n";
     }
     file.close();
 }
